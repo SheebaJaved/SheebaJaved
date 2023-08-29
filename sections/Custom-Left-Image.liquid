@@ -1,0 +1,298 @@
+<style>
+  .nx-btn-buy-white {
+    fill: #fff;
+    color: #000;
+    background-color: #fff;
+    border-style: solid;
+    border-width: 2px 2px 2px 2px;
+    border-color: #fff;
+    border-radius: 5px;
+    padding: 13px 20px;
+    text-decoration: none;
+    font-size: 15px;
+    display: block;
+    transition: .5s;
+    cursor: pointer;
+    width: 100%;
+}
+    .nx-btn-buy-white:hover {
+    transition: .5s;
+    transform: scale(1.1);
+}
+  .nx-wrap-list-{{ section.id }}{
+    background: url( {{ section.settings.bgimagedesktop | img_url: 'large' }} );
+    background-size: cover; 
+    background-position: center;
+    text-align: center;
+    padding: 30px 0;
+    }
+  
+  .nx-container-list{
+  	max-width: 1140px;
+    margin: 0 auto;
+  }
+  .nx-wrap-list h2{
+  	font-size: 42px;
+  }
+  
+  @media screen and (max-width:767px){
+    .nx-btn-section .nx-left-col{
+    	width:100%;
+    }
+    .nx-btn-section .right-col{
+    	display:none;
+    }
+    .nx-wrap-list-{{ section.id }}{
+    	background: url( {{ section.settings.bgimagemobile | img_url: 'large' }} );
+      	background-size: cover;
+    	background-position: center;
+    }
+  }
+</style>
+<div class="nx-wrap-list-{{ section.id }}">
+  <div class="nx-container-list">
+  <div>
+  <h2 style="color: {{section.settings.headercolor }}; font-size: {{ section.settings.headersize }}px; margin: 0">{{ section.settings.headertext }}</h2>
+  </div>
+  {%- for block in section.blocks -%}
+    {%- case block.type -%}
+ 		{% when 'richtext' %}
+  			<style>
+              .p-color-{{block.id}} p{
+     				 color: {{ block.settings.paragraphcolor }}!important;
+                  font-size:{{section.settings.descriptionsize}}px;                  	
+    			}
+ 			</style>
+ 			 <div class="p-color-{{block.id}}">
+    			<p> {{ block.settings.paragraph }}</p>
+  
+  			 </div>
+		{% when 'text' %}
+    <style>
+      .nx-point{
+      	display:flex;
+        justify-content: center;
+      }
+      
+      .nx-point i{
+      	    width: 1.25em;
+        padding-top: 2.5%;
+        
+      }
+      
+      .nx-point p{
+      	padding-left: 5px;
+        
+      }
+      .nx-point-{{block.id}} i, .point-{{block.id}} p{
+        color: {{ block.settings.pointcolor }}!important;
+        margin: 0;
+      }
+    </style>
+    <div class="nx-point-{{block.id}}">
+    		<!--<i aria-hidden="true" class="fas fa-check" style="font-size: {{ section.settings.pointsize }}px"></i>-->
+      <p style="font-size: {{ section.settings.pointsize }}px"><i aria-hidden="true" class="fas fa-check"></i>{{ block.settings.point}}</p>
+    </div>
+  	{%- endcase -%}
+  {%- endfor -%}
+    
+    <div class="nx-btn-section">
+      {% if section.settings.watchvideo == true and section.settings.buybutton == true %}
+       <div class="nx-left-col">
+         <div class="nx-btn-wrap">
+           <form class="product-form js-product-form8" action="/cart/add" data-productid="{{ section.settings.product-handle.id }}" method="post"> 
+  				<input type="hidden" name="id" data-productid="PRODUCT_ID" class="product-select" value="{{ section.settings.product-handle.variants[0].id }}">
+              	<input type="hidden" name="return_to" value="/checkout/" />
+		  		<input type="submit" value="BUY NOW {{ section.settings.product-handle.variants[0].price | money }}" class="nx-btn-buy-white" style="color:{{ section.settings.btnfontcolor }}; background: {{ section.settings.btnbgcolor }}; border-color: {{ section.settings.btnbordercolor }}">
+		   </form>
+         </div>
+       </div>
+       <div class="nx-right-col">
+         <div class="nx-btn-wrap">
+		     <a href="{{ section.settings.linkvideo }}" class="btn-watch" style="color:{{ section.settings.btnwatchfontcolor }}; background: {{ section.settings.btnwatchbgcolor }}; border-color: {{ section.settings.btnwatchbordercolor }}"> WATCH VIDEO </a>
+         </div>  
+       </div>
+      {% endif %}
+      {% if section.settings.watchvideo == false and section.settings.buybutton == true %} 
+      	<div class="nx-btn-wrap">
+           <form class="product-form js-product-form9" action="/cart/add" data-productid="{{ section.settings.product-handle.id }}" method="post"> 
+  				<input type="hidden" name="id" data-productid="PRODUCT_ID" class="product-select" value="{{ section.settings.product-handle.variants[0].id }}">
+              	<input type="hidden" name="return_to" value="/checkout/" />
+		  		<input type="submit" value="BUY NOW {{ section.settings.product-handle.variants[0].price | money }}" class="nx-btn-buy-white" style="color:{{ section.settings.btnfontcolor }}; background: {{ section.settings.btnbgcolor }}; border-color: {{ section.settings.btnbordercolor }}">
+		   </form>
+         </div>
+       {% endif %}
+       {% if section.settings.watchvideo == true and section.settings.buybutton == false %} 
+      	<div class="nx-btn-wrap">
+           <a href="{{ section.settings.linkvideo }}" class="nx-btn-watch" style="color:{{ section.settings.btnwatchfontcolor }}; background: {{ section.settings.btnwatchbgcolor }}; border-color: {{ section.settings.btnwatchbordercolor }}"> WATCH VIDEO </a>
+         </div>
+       {% endif %}
+     </div>
+    
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "List Section",
+    "settings": [
+	{
+      "type": "image_picker",
+      "id": "bgimagedesktop",
+      "label": "Background Image Desktop"
+    },
+	{
+      "type": "image_picker",
+      "id": "bgimagemobile",
+      "label": "Background Image Mobile"
+    },
+	
+	{
+      "type": "text",
+      "id": "headertext",
+      "label": "Header"
+    },
+	{
+      "type": "color",
+      "id": "headercolor",
+      "label": "Header color"
+    },
+{
+      "type": "range",
+      "id": "headersize",
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Heading Font Size",
+      "default": 25
+    },
+	{
+      "type": "range",
+      "id": "descriptionsize",
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Text Font Size",
+      "default": 25
+    },
+	{
+      "type": "range",
+      "id": "pointsize",
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "List Font Size",
+      "default": 25
+    },
+	{
+      "type": "text",
+      "id": "linkvideo",
+      "label": "Link for Watch video button",
+	  "default": "#"
+    },
+	{
+      "type": "checkbox",
+      "id": "watchvideo",
+      "default": true,
+      "label": "Show Button Watch Video"
+    },
+	{
+      "type": "checkbox",
+      "id": "buybutton",
+      "default": true,
+      "label": "Show Buy Button "
+    },
+
+	{
+      "type": "product",
+      "id": "product-handle",
+      "label": "Product"
+    },
+	{
+      "type": "color",
+      "id": "btnfontcolor",
+      "label": "Button Font Color"
+    },
+    {
+      "type": "color",
+      "id": "btnbordercolor",
+      "label": "Button Border Color"
+    },
+    {
+      "type": "color",
+      "id": "btnbgcolor",
+      "label": "Button Background Color"
+    },
+	{
+      "type": "color",
+      "id": "btnwatchfontcolor",
+      "label": "Button watch Font Color"
+    },
+    {
+      "type": "color",
+      "id": "btnwatchbordercolor",
+      "label": "Button watch Border Color"
+    },
+    {
+      "type": "color",
+      "id": "btnwatchbgcolor",
+      "label": "Button Background Color"
+    }
+	
+
+],
+
+"blocks":[
+	{
+      "type": "richtext",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "paragraph",
+		  "default": "<p>Text here</p>",
+          "label": "Text"
+        },
+		{
+			"type": "color",
+          "id": "paragraphcolor",
+          "label": "Text color"
+		}
+		
+
+	]
+	},
+	
+	{
+      "type": "text",
+      "name": "Point",
+      "settings": [
+        {
+          "type": "text",
+          "id": "point",
+          "label": "Point text"
+        },
+		{
+			"type": "color",
+          "id": "pointcolor",
+          "label": "Point color"
+		}
+
+	]
+	}
+	
+
+],
+
+"presets": [
+    {
+      "name": "List Section"
+    }
+  ]
+
+
+  }
+{% endschema %}

@@ -1,0 +1,89 @@
+<style>
+ /* Styles for the entire video section */
+.video-section {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  padding: 40px 0; /* Adjust the padding as needed */
+  background-color: #f7f7f7; /* Background color */
+}
+
+/* Styles for the video player container */
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio for responsive video */
+  overflow: hidden;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Styles for the cover image */
+.cover-image img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Additional styles for responsive layout */
+@media screen and (max-width: 768px) {
+  .video-section {
+    padding: 20px 0;
+  }
+}
+
+</style>
+<div class="video-image-section">
+  {% if section.settings.video_url %}
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/{{ section.settings.video_url }}" frameborder="0" allowfullscreen></iframe>
+    </div>
+  {% endif %}
+
+  {% if section.settings.image %}
+    <div class="image-container">
+      <img src="{{ section.settings.image | img_url }}" alt="{{ section.settings.alt }}">
+    </div>
+  {% endif %}
+</div>
+
+
+{% schema %}
+{
+  "name": "VideoImageSection",
+  "settings": [
+    {
+      "type": "video_url",
+      "id": "video_url",
+      "label": "Video URL",
+      "accept": ["youtube"],
+      "info": "Enter the YouTube video ID"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image",
+      "info": "Select an image from your gallery"
+    },
+    {
+      "type": "text",
+      "id": "alt",
+      "label": "Alt Text",
+      "info": "Alternative text for the image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video and Image"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,374 @@
+<style>
+  *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      text-decoration: none;
+      outline: none;
+      border: none;
+      text-transform: capitalize;
+      transition: .2s linear;
+  }
+  .nx-container{
+      background: {{ section.settings.nx_services_section_background_color }};
+      padding: {{ section.settings.nx_services_section_padding_top }}px {{ section.settings.nx_services_section_padding_right }}px {{ section.settings.nx_services_section_padding_bottom }}px {{ section.settings.nx_services_section_padding_left }}px;
+  }
+  .nx-container .nx-heading{
+      padding-top: {{ section.settings.nx_services_heading_padding_top }}px;
+      padding-bottom: {{ section.settings.nx_services_heading_padding_bottom }}px;
+      color:{{ section.settings.nx_heading_color }};
+      text-align: center;
+      font-size: {{ section.settings.nx_services_heading_font_size }}px;
+  }
+  .nx-container .nx-box-container{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 15px;
+  }
+  .nx-container .nx-box-container .nx-box{
+      background: {{ section.settings.nx_box_background_color }};
+      text-align: {{ section.settings.nx_box_text_align }};
+      padding: {{ section.settings.nx_box_padding_top }}px {{ section.settings.nx_box_padding_right }}px {{ section.settings.nx_box_padding_bottom }}px {{ section.settings.nx_box_padding_left }}px;
+      border-radius:  {{ section.settings.nx_box_border_radius }}px;
+  }
+  .nx-container .nx-box-container .nx-box img{
+      height: 80px;
+  }
+  .nx-container .nx-box-container .nx-box h3{
+      color:{{ section.settings.nx_title_color }};
+      font-size: {{ section.settings.nx_services_title_font_size }}px;
+      padding: {{ section.settings.nx_services_title_padding_top }}px {{ section.settings.nx_services_title_padding_right }}px {{ section.settings.nx_services_title_padding_bottom }}px {{ section.settings.nx_services_title_padding_left }}px;
+  }
+  .nx-container .nx-box-container .nx-box p{
+      color:{{ section.settings.nx_description_color }};
+      font-size: {{ section.settings.nx_services_description_font_size }}px;
+      padding: {{ section.settings.nx_services_description_padding_top }}px {{ section.settings.nx_services_description_padding_right }}px {{ section.settings.nx_services_description_padding_bottom }}px {{ section.settings.nx_services_description_padding_left }}px;
+      line-height: 1.8;
+  }
+  @media (max-width:768px){
+      .nx-container{
+          padding: 20px;
+      }
+  }
+</style>
+<div class="nx-container">
+  <h1 class="nx-heading">{{ section.settings.nx_heading }}</h1>
+  <div class="nx-box-container">
+    {% for block in section.blocks %}
+    <div class="nx-box">
+      <img src="{{ block.settings.nx_service_image | img_url: 'master' }}" alt="Service Image">
+      <h3>{{ block.settings.nx_service_title }}</h3>
+      <p>
+        {{ block.settings.nx_service_description }}
+      </p>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "NX Services Section",
+ "settings": [
+  {
+    "type": "color",
+    "id": "nx_services_section_background_color",
+    "label": "Background Color",
+    "default": "#f1f1f1"
+  },
+  {
+  "type": "range",
+  "id": "nx_services_section_padding_top",
+  "label": "Section Padding Top",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 15,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "nx_services_section_padding_bottom",
+  "label": "Section Padding Bottom",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 15,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "nx_services_section_padding_right",
+  "label": "Section Padding Right",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 30,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "nx_services_section_padding_left",
+  "label": "Section Padding Left",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 30,
+  "step": 1
+  },  
+  {
+  "type": "textarea",
+  "id": "nx_heading",
+  "label": "Heading",
+  "default":"Our Services"
+  },
+  {
+    "type": "color",
+    "id": "nx_heading_color",
+    "label": "Heading Color",
+    "default": "#FFFFFF"
+  },
+  {
+  "type": "range",
+  "id": "nx_services_heading_font_size",
+  "label": "Heading Font Size",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 50,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "nx_services_heading_padding_top",
+  "label": "Heading Padding Top",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 15,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "nx_services_heading_padding_bottom",
+  "label": "Heading Padding Bottom",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 15,
+  "step": 1
+  },
+  {
+  "type": "color",
+  "id": "nx_box_background_color",
+  "label": "Box Background Color",
+  "default": "#fff"
+  },
+  {
+  "type": "range",
+  "id": "nx_box_padding_top",
+  "label": "Box Padding Top",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 30,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "nx_box_padding_bottom",
+  "label": "Box Padding Bottom",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 30,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "nx_box_padding_right",
+  "label": "Box Padding Right",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 20,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "nx_box_padding_left",
+  "label": "Box Padding Left",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 20,
+  "step": 1
+  },
+ {
+  "type": "select",
+  "id": "nx_box_text_align",
+  "label": "Box Text Alignment",
+  "default": "center",
+  "options": [
+    { "value": "left", "label": "Left" },
+    { "value": "center", "label": "Center" },
+    { "value": "right", "label": "Right" },
+    { "value": "justify", "label": "Justify" }
+  ]
+ },
+  {
+  "type": "range",
+  "id": "nx_box_border_radius",
+  "label": "Box Border Radius",
+  "unit": "px",
+  "min": 0,
+  "max": 50,
+  "default": 5,
+  "step": 1
+  }, 
+  {
+  "type": "color",
+  "id": "nx_title_color",
+  "label": "Title Color",
+  "default": "#000000"
+  },
+  {
+  "type": "range",
+  "id": "nx_services_title_font_size",
+  "label": "Title Font Size",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 22,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "nx_services_title_padding_top",
+  "label": "Title Padding Top",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 10,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "nx_services_title_padding_bottom",
+  "label": "Title Padding Bottom",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 10,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "nx_services_title_padding_right",
+  "label": "Title Padding Right",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 0,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "nx_services_title_padding_left",
+  "label": "Title Padding Left",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 0,
+  "step": 1
+  },
+  {
+    "type": "color",
+    "id": "nx_description_color",
+    "label": "description Color",
+    "default": "#000000"
+  },
+  {
+  "type": "range",
+  "id": "nx_services_description_font_size",
+  "label": "Description Font Size",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 15,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "nx_services_description_padding_top",
+  "label": "Description Padding Top",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 0,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "nx_services_description_padding_bottom",
+  "label": "Description Padding Bottom",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 0,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "nx_services_description_padding_right",
+  "label": "Description Padding Right",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 0,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "nx_services_description_padding_left",
+  "label": "Description Padding Left",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 0,
+  "step": 1
+  }
+  ],
+   "blocks": [
+    {
+      "type": "Box",
+      "name": "Box",
+      "limit": 12,
+      "settings": [
+          {
+      "type": "image_picker",
+      "id": "nx_service_image",
+      "label": "Service Image"
+    },
+    {
+      "type": "text",
+      "id": "nx_service_title",
+      "label": "Service Title"
+    },
+    {
+      "type": "textarea",
+      "id": "nx_service_description",
+      "label": "Service Description",
+      "default": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+    }
+    ]
+   }
+  ],
+  "presets": [
+    {
+      "name": "NX Services Section",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

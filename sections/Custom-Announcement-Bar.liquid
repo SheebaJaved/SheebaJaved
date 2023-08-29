@@ -1,0 +1,92 @@
+<style>
+.nx-announcement-bar {
+  background-color: {{ section.settings.nx_announcement_bg_color }};
+  padding-top: {{ section.settings.nx_announcement_padding_top }}px;
+  padding-bottom: {{ section.settings.nx_announcement_padding_bottom }}px;
+  font-weight: {{ section.settings.nx_announcement_font_weight }};
+  text-align:center;
+}
+
+
+</style> 
+
+
+
+<div class="nx-announcement-bar">
+  <p style="font-size: {{ section.settings.nx_announcement_text_size }}px; color: {{ section.settings.nx_announcement_text_color }};">
+    {{ section.settings.nx_announcement_text }}
+  </p>
+</div>
+
+
+{% schema %}
+{
+  "name": "Announcement Bar",
+  "settings": [
+    {
+      "type": "text",
+      "id": "nx_announcement_text",
+      "label": "Announcement Text"
+    },
+    {
+      "type": "range",
+      "id": "nx_announcement_text_size",
+      "label": "Text Size",
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "nx_announcement_font_weight",
+      "label": "Font Weight",
+      "options": [
+        { "value": "normal", "label": "Normal" },
+        { "value": "bold", "label": "Bold" },
+        { "value": "bolder", "label": "Bolder" },
+        { "value": "lighter", "label": "Lighter" }
+      ],
+      "default": "normal"
+    },
+    {
+      "type": "color",
+      "id": "nx_announcement_text_color",
+      "label": "Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "nx_announcement_bg_color",
+      "label": "Background Color",
+      "default": "#333333"
+    },
+    {
+      "type": "range",
+      "id": "nx_announcement_padding_top",
+      "label": "Padding Top",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "default": 10,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "nx_announcement_padding_bottom",
+      "label": "Padding Bottom",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "default": 10,
+      "unit": "px"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Announcement Bar"
+    }
+  ]
+}
+{% endschema %}

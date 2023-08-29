@@ -1,0 +1,251 @@
+<style>
+ .team-section {
+  padding: {{ section.settings.team_section_padding_top }}px {{ section.settings.team_section_padding_right }}px {{ section.settings.team_section_padding_bottom }}px {{ section.settings.team_section_padding_left }}px ;
+  background-color: {{ section.settings.team_section_background_color }};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+} 
+  .team-contanier {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+ 
+  .team-member {
+    background-color: {{ section.settings.team_box_background_color }};
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: {{ section.settings.team_box_padding }}px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .team-member img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+
+  .team-member h3 {
+    color: {{ section.settings.team_name_color }};
+    margin-top: {{ section.settings.team_name_margin_top }}px;
+    margin-bottom: {{ section.settings.team_name_margin_bottom }}px;
+    font-size: {{ section.settings.team_name_font_size }}px;
+  }
+
+  .team-member p {
+    margin-top: {{ section.settings.team_subtitle_margin_top }}px;
+    margin-bottom: {{ section.settings.team_subtitle_margin_bottom }}px;
+    font-size: {{ section.settings.team_subtitle_font_size }}px;
+    color: {{ section.settings.team_subtitle_color }};
+  }
+
+@media screen and (max-width: 768px) {
+  .team-contanier {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .team-contanier {
+    grid-template-columns: 1fr;
+  }
+}
+
+</style>
+ <div class="team-section">
+  <div class="team-contanier">
+    {% for block in section.blocks %} 
+    <div class="team-member">
+      <img src="{{ block.settings.team-image | img_url: 'large' }}" alt="Team Member 1">
+      <h3>{{ block.settings.team_name_heading }}</h3>
+      <p>{{ block.settings.team_position }}</p>
+    </div>
+    {% endfor %}   
+  </div>
+ </div>
+{% schema %}
+   { 
+   "name": "Custom Team Section", 
+  "settings": [
+  {
+    "type": "color",
+    "id": "team_section_background_color",
+    "label": "Section Background Color",
+    "default": "#f7f7f7"
+  },
+  {
+  "type": "range",
+  "id": "team_section_padding_top",
+  "label": "Section Padding Top",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 0,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "team_section_padding_bottom",
+  "label": "Section Padding Bottom",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 0,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "team_section_padding_right",
+  "label": "Section Padding Right",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 0,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "team_section_padding_left",
+  "label": "Section Padding Left",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 0,
+  "step": 1
+  },
+  {
+    "type": "color",
+    "id": "team_name_color",
+    "label": "Hading Color",
+    "default": "#000000"
+  },
+  {
+  "type": "range",
+  "id": "team_name_font_size",
+  "label": "Heading Font Size",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 18,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "team_name_margin_top",
+  "label": "Heading Margin Top",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 0,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "team_name_margin_bottom",
+  "label": "Heading Margin Bottom",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 0,
+  "step": 1
+  },
+  {
+    "type": "color",
+    "id": "team_subtitle_color",
+    "label": "Hading Color",
+    "default": "#000000"
+  },
+  {
+  "type": "range",
+  "id": "team_subtitle_font_size",
+  "label": "Subtitle Font Size",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 14,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "team_subtitle_margin_top",
+  "label": "Subtitle Margin Top",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 5,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "team_subtitle_margin_bottom",
+  "label": "Subtitle Margin Bottom",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 5,
+  "step": 1
+  },
+  {
+    "type": "color",
+    "id": "team_box_background_color",
+    "label": "Box Color",
+    "default": "#ffffff"
+  },
+  {
+    "type": "range",
+    "id": "team_box_padding",
+    "label": "Box Padding",
+    "unit": "px",
+    "min": 0,
+    "max": 100,
+    "default": 20,
+    "step": 1
+  }
+  ],
+  "blocks": [
+      {
+        "type": "team-section",
+        "name": "Team Section",
+        "settings": [
+         {
+          "type": "image_picker",
+          "id": "team-image",
+          "label": "Team Image"
+          },
+          {
+            "type": "text",
+            "id": "team_name_heading",
+            "label": "Heading",
+            "default": "John Doe"
+          },
+          {
+            "type": "text",
+            "id": "team_position",
+            "label": "Subtitle",
+            "default": "CEO"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Custom Team Section"
+      }
+    ]
+  }
+{% endschema %}

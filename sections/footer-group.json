@@ -1,0 +1,72 @@
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "b3fdf26a-62ad-45b6-acba-e8613dfbc315": {
+      "type": "Custom-Footer-Section",
+      "blocks": {
+        "9694f983-808c-4072-be90-87eb13197407": {
+          "type": "download_app_box",
+          "settings": {
+            "footer_download_heading": "Download Our App",
+            "footer_download_heading_padding_top": 0,
+            "footer_download_heading_padding_bottom": 0,
+            "footer_download_heading_padding_right": 0,
+            "footer_download_heading_padding_left": 0,
+            "footer_download_heading_font_size": 22,
+            "footer_download_text": "Lorem ipsum dolor sit a met, consectetur adipisicing a lit.",
+            "download_img_link_url_1": "",
+            "footer_image_1": "shopify:\/\/shop_images\/play-store.png",
+            "download_img_link_url_2": "",
+            "footer_image_2": "shopify:\/\/shop_images\/app-store.png",
+            "logo_link_url": "",
+            "footer_logo_image": "shopify:\/\/shop_images\/logo-white.png",
+            "footer_about_title": "About Us",
+            "footer_about_content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti deserunt consectetur mollitia, quia omnis adipisci.",
+            "main_menu_title": "Main Menu",
+            "main_menu_links": "Home,Products,About Us",
+            "additional_menu_title": "Additional Menu",
+            "additional_menu_links": "Contact, FAQ, Privacy Policy",
+            "menu": "main-menu"
+          }
+        }
+      },
+      "block_order": [
+        "9694f983-808c-4072-be90-87eb13197407"
+      ],
+      "settings": {
+        "footer_section_background_color": "#000000",
+        "footer_section_color": "#8a8a8a",
+        "footer_section_padding_top": 40,
+        "footer_section_padding_bottom": 20,
+        "footer_section_padding_right": 0,
+        "footer_section_padding_left": 0,
+        "footer_section_font_size": 14,
+        "footer_copyright_text": "Copyright © 2023. All rights reserved.",
+        "footer_heading_color": "#ffffff"
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "background-1",
+        "newsletter_enable": true,
+        "newsletter_heading": "Subscribe to our emails",
+        "enable_follow_on_shop": true,
+        "show_social": true,
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "payment_enable": true,
+        "show_policy": false,
+        "margin_top": 36,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "b3fdf26a-62ad-45b6-acba-e8613dfbc315",
+    "footer"
+  ]
+}

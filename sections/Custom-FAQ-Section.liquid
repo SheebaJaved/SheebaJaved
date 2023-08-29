@@ -1,0 +1,225 @@
+<link rel='stylesheet' href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'>
+
+<style>
+.faq-section{
+  background-color: {{ section.settings.faq_section_bgcolor }};
+  padding-top:{{ section.settings.faq_section_padding_top }}px;
+  padding-bottom:{{ section.settings.faq_section_padding_bottom }}px;  
+  padding-left:{{ section.settings.faq_section_padding_left }}px;
+  padding-right:{{ section.settings.faq_section_padding_right }}px;  
+}
+.main-container {
+  margin: 0 auto;
+  padding: 4rem;
+  width: 70rem;
+}
+
+.accordion{
+    border: 1px solid #e5e5e5; 
+    border-bottom: none;
+}
+.accordion h2 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 3rem 1rem 1rem;
+  color: {{ section.settings.faq_heading_color }};
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+.accordion h2:hover,
+.accordion h2:hover::after {
+  cursor: pointer;
+}
+.accordion h2::after {
+  font-family: 'Ionicons';
+  content: '\f218';
+  position: absolute;
+  float: right;
+  right: 1rem;
+  text-align: center;
+}
+.accordion h2.active::after, .accordion .sub-item h2.active::after {
+  font-family: 'Ionicons';
+  content: '\f209';
+}
+.accordion .content {
+  opacity: 0;
+  padding: 0 1rem;
+  max-height: 0;
+  border-bottom: 1px solid #e5e5e5;
+  overflow: hidden;
+  clear: both;
+}
+.accordion .content p {
+  font-size: 14px;
+  font-weight: 300;
+}
+.accordion .content.active {
+  opacity: 1;
+  padding: 1rem;
+  max-height: 100%;
+}
+.accordion .sub-item {
+  padding: 0px!important;
+}
+.accordion .sub-item h2 {
+  font-size: 14px;
+}
+.accordion .sub-item h2::after {
+  font-family: 'Ionicons';
+  font-size: 12px;
+}
+.accordion .sub-item .accordion{
+    border: none;
+}
+  /* Responsive Styles */
+    @media (max-width: 768px) {
+      .main-container {
+        padding: 2rem;
+        width: auto;
+      }
+      .accordion h2 {
+        font-size: 18px;
+      }
+      .accordion .content p {
+        font-size: 12px;
+      }
+    }
+ .customize-checkbox {
+    margin-bottom: 10px;
+  }
+</style>
+
+<div class="faq-section">
+  <div class="main-container">
+    
+    <div class="accordion">
+      {% for block in section.blocks %} 
+        <div class="accordion-item {% if block.settings.faq_subitem_checkbox %}sub-item{% endif %}">
+          <h2>{{ block.settings.faq_heading }}</h2>
+          <div class="content">
+            <p>{{ block.settings.faq_description }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<script>
+   $(document).ready(function(){
+    $('.accordion h2').click(function() {
+        const index = $(this).index();
+        localStorage.setItem('activeIndex', index);
+        
+        $(this).toggleClass('active').next().toggleClass('active');
+    });
+
+    $('.icon').click(function() {
+        const target = $(this).data('target');
+        const offset = $(target).offset().top;
+        $('html, body').animate({
+            scrollTop: offset
+        }, 1000);
+    });
+
+    const activeIndex = localStorage.getItem('activeIndex');
+    if (activeIndex !== null) {
+        const activeItem = $('.accordion h2').eq(activeIndex);
+        activeItem.toggleClass('active').next().toggleClass('active');
+    }
+});
+</script>
+{% schema %}
+   { 
+   "name": "Custom FAQ", 
+  "settings": [
+    {
+      "type": "color",
+      "id": "faq_section_bgcolor",
+      "label": "Section Background Color",
+      "default": "#fff"
+    },
+    {
+      "type": "range",
+      "id": "faq_section_padding_top",
+      "label": "Section Padding Top",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "default": 0,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "faq_section_padding_bottom",
+      "label": "Section Padding Bottom",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "default": 0,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "faq_section_padding_right",
+      "label": "Section Padding Right",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "default": 0,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "faq_section_padding_left",
+      "label": "Section Padding Left",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "default": 0,
+      "step": 1
+    },
+    {
+      "type": "color",
+      "id": "faq_heading_color",
+      "label": "Heading Color",
+      "default": "#141b4d"
+    }
+  ],
+  "blocks": [
+      {
+        "type": "faq-section",
+        "name": "FAQ Section",
+        "settings": [
+          {
+            "type": "checkbox",
+            "id": "faq_subitem_checkbox",
+            "label": "Enable Sub-item Behavior",
+            "default": false
+          },
+          {
+            "type": "text",
+            "id": "faq_heading",
+            "label": "Heading",
+            "default": "Description"
+          },
+          {
+            "type": "richtext",
+            "id": "faq_description",
+            "label": "Description",
+            "default": "<p>Every sign crafted with unique artistry</p>"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Custom FAQ"
+      }
+    ]
+  }
+{% endschema %}

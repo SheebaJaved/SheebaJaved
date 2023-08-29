@@ -1,0 +1,1158 @@
+{
+  "sections": {
+    "35afaa9b-3e81-4db8-bafa-676d9f3578e1": {
+      "type": "Image-Slider",
+      "blocks": {
+        "cc16e2e1-4ae1-485a-afe1-eec2f8d72c26": {
+          "type": "image-slider",
+          "settings": {
+            "link_url": "",
+            "image_banner": "shopify:\/\/shop_images\/Add_a_heading_4.webp",
+            "image_banner_mobile": "shopify:\/\/shop_images\/Wear_Your_Best_Mobile_430x_545bddf9-39cc-4aa5-8b6a-4d9b64835ca5.webp"
+          }
+        },
+        "068287e5-c970-4295-a0ad-421ad64c84db": {
+          "type": "image-slider",
+          "settings": {
+            "link_url": "",
+            "image_banner": "shopify:\/\/shop_images\/download_f4e2551e-ace1-4f36-a585-3d11f26ea0a1.webp",
+            "image_banner_mobile": "shopify:\/\/shop_images\/Wear_your_Best_2.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "cc16e2e1-4ae1-485a-afe1-eec2f8d72c26",
+        "068287e5-c970-4295-a0ad-421ad64c84db"
+      ],
+      "settings": {}
+    },
+    "784e3433-e08c-459c-8f27-9a53353f8e87": {
+      "type": "slideshow",
+      "blocks": {
+        "bd6b220b-4cdc-43d0-b7ea-faeed3a01c88": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Webbanner2_1512x_8e48f1ed-dc5c-4a21-9a5a-132d9166b5e3.webp",
+            "heading": "Image slide",
+            "heading_size": "h1",
+            "subheading": "Tell your brand's story through images",
+            "button_label": "Button label",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": true,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "background-1",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "template--19893130068285__784e3433-e08c-459c-8f27-9a53353f8e87-1688990080c93e521a-1": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Web_banner2_900x_65988839-3138-40a5-b6be-74e623554e0f.webp",
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": true,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "",
+            "text_alignment_mobile": "center"
+          }
+        }
+      },
+      "block_order": [
+        "bd6b220b-4cdc-43d0-b7ea-faeed3a01c88",
+        "template--19893130068285__784e3433-e08c-459c-8f27-9a53353f8e87-1688990080c93e521a-1"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".slideshow__text.banner__box {display: none;}"
+      ],
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "adapt_image",
+        "slider_visual": "dots",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": false,
+        "accessibility_info": ""
+      }
+    },
+    "image_banner": {
+      "type": "image-banner",
+      "disabled": true,
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Web_banner2_900x_65988839-3138-40a5-b6be-74e623554e0f.webp",
+        "image_overlay_opacity": 20,
+        "image_height": "medium",
+        "desktop_content_position": "bottom-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "inverse",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": false,
+        "show_text_below": false
+      }
+    },
+    "80a05280-fa77-4c86-a3fe-5c583d182923": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "<strong>TRENDING<\/strong>",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "mohne-1",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "40e48dfd-24c8-477d-aa0b-f44c52a996d3": {
+      "type": "Text-With-Image-Gallery",
+      "settings": {
+        "section-background_color": "#ffffff",
+        "section_padding_top": 26,
+        "section_padding_bottom": 20,
+        "section_padding_right": 22,
+        "section_padding_left": 22,
+        "container_display": "flex",
+        "container_padding_top": 3,
+        "container_padding_bottom": 29,
+        "container_padding_right": 30,
+        "container_padding_left": 30,
+        "content_flex_basis": 40,
+        "content_text_align": "left",
+        "content_padding_top": 34,
+        "content_padding_bottom": 0,
+        "content_padding_right": 0,
+        "content_padding_left": 0,
+        "content_heading": "Upcoming Tours & Destinations",
+        "content_heading_color": "#000000",
+        "content_heading_margin_top": 0,
+        "content_heading_margin_bottom": 16,
+        "content_heading_margin_right": 0,
+        "content_heading_margin_left": 0,
+        "content_heading_font_size": 36,
+        "content_heading_font_weight": 500,
+        "content_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc non ipsum et dolor cursus vulputate vel ac eros.",
+        "content_text_color": "#777777",
+        "content_text_margin_top": 0,
+        "content_text_margin_bottom": 5,
+        "content_text_margin_right": 0,
+        "content_text_margin_left": 0,
+        "content_text_font_size": 14,
+        "content_button_link_url": "",
+        "content_button": "Learn More",
+        "content_button_background_color": "#ff523b",
+        "content_button_hover_background_color": "#563434",
+        "content_button_color": "#ffffff",
+        "content_button_hover_color": "#ffffff",
+        "content_button_display": "inline-block",
+        "content_button_padding_top": 8,
+        "content_button_padding_bottom": 8,
+        "content_button_padding_right": 22,
+        "content_button_padding_left": 22,
+        "content_button_font_size": 16,
+        "content_button_margin_top": 10,
+        "content_button_margin_bottom": 5,
+        "content_button_margin_right": 0,
+        "content_button_margin_left": 0,
+        "content_button_border_radius": 30,
+        "image_gallery_flex_basis": 55,
+        "image_gallery_display": "flex",
+        "image_gallery_justify_content": "space-around",
+        "image_gallery_width": 100,
+        "image_gallery_image_max_width": 250,
+        "image_gallery_img_flex_basis_percent": 33,
+        "image_gallery_img_margin_px": 10,
+        "text_img-link_url_1": "#",
+        "text_img_1": "shopify:\/\/shop_images\/img1.png",
+        "text_img-link_url_2": "#",
+        "text_img_2": "shopify:\/\/shop_images\/img2.png",
+        "text_img-link_url_3": "#",
+        "text_img_3": "shopify:\/\/shop_images\/img1.png",
+        "text_img-link_url_4": "#",
+        "text_img_4": "shopify:\/\/shop_images\/img4.png",
+        "text_img-link_url_5": "#",
+        "text_img_5": "shopify:\/\/shop_images\/img4.png",
+        "text_img-link_url_6": "#",
+        "text_img_6": "shopify:\/\/shop_images\/img4.png"
+      }
+    },
+    "3f772303-3d9b-46e5-831b-4298b5c0a30e": {
+      "type": "Custom-Services-Section",
+      "blocks": {
+        "dc4abda4-ddcb-473b-9ac2-af0d3e953cee": {
+          "type": "Box",
+          "settings": {
+            "service_image": "shopify:\/\/shop_images\/conversation.webp",
+            "service_title": "Graphic Design",
+            "service_description": "We Brand Beyond Mental Bounds And Design Instinctively That Suits To Your Business Growth. We Make Your Products Greatly Incomparable In Market.",
+            "button_text": "Read more",
+            "button-link_url": ""
+          }
+        },
+        "f16609c6-f17e-45dd-9853-29e06ce42f8f": {
+          "type": "Box",
+          "settings": {
+            "service_image": "shopify:\/\/shop_images\/planing.webp",
+            "service_title": "Graphic Design",
+            "service_description": "We Brand Beyond Mental Bounds And Design Instinctively That Suits To Your Business Growth. We Make Your Products Greatly Incomparable In Market.",
+            "button_text": "Read more",
+            "button-link_url": ""
+          }
+        },
+        "f64e58c7-06fb-4278-abd2-d994a18d1ea5": {
+          "type": "Box",
+          "settings": {
+            "service_image": "shopify:\/\/shop_images\/conversation.webp",
+            "service_title": "Graphic Design",
+            "service_description": "We Brand Beyond Mental Bounds And Design Instinctively That Suits To Your Business Growth. We Make Your Products Greatly Incomparable In Market.",
+            "button_text": "Read more",
+            "button-link_url": ""
+          }
+        },
+        "a6b26841-77a4-4237-ba94-3ecc90d691c4": {
+          "type": "Box",
+          "settings": {
+            "service_image": "shopify:\/\/shop_images\/planing.webp",
+            "service_title": "Graphic Design",
+            "service_description": "We Brand Beyond Mental Bounds And Design Instinctively That Suits To Your Business Growth. We Make Your Products Greatly Incomparable In Market.",
+            "button_text": "Read more",
+            "button-link_url": ""
+          }
+        },
+        "abf8ff27-08b5-41fe-a1d2-36f60e359023": {
+          "type": "Box",
+          "disabled": true,
+          "settings": {
+            "service_image": "shopify:\/\/shop_images\/conversation.webp",
+            "service_title": "Graphic Design",
+            "service_description": "We Brand Beyond Mental Bounds And Design Instinctively That Suits To Your Business Growth. We Make Your Products Greatly Incomparable In Market.",
+            "button_text": "Read more",
+            "button-link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "dc4abda4-ddcb-473b-9ac2-af0d3e953cee",
+        "f16609c6-f17e-45dd-9853-29e06ce42f8f",
+        "f64e58c7-06fb-4278-abd2-d994a18d1ea5",
+        "a6b26841-77a4-4237-ba94-3ecc90d691c4",
+        "abf8ff27-08b5-41fe-a1d2-36f60e359023"
+      ],
+      "settings": {
+        "services_section_background_gradient_start": "#ffffff",
+        "services_section_background_gradient_end": "#ffffff",
+        "services_section_padding_top": 15,
+        "services_section_padding_bottom": 17,
+        "services_section_padding_right": 80,
+        "services_section_padding_left": 80,
+        "heading": "Our Services",
+        "heading_color": "#121212",
+        "services_heading_font_size": 38,
+        "services_heading_padding_top": 13,
+        "services_heading_padding_bottom": 28,
+        "box_background_gradient_start": "#000000",
+        "box_background_gradient_end": "#000000",
+        "box_padding_top": 30,
+        "box_padding_bottom": 30,
+        "box_padding_right": 20,
+        "box_padding_left": 20,
+        "box_text_align": "center",
+        "box_border_radius": 5,
+        "title_color": "#ffffff",
+        "services_title_font_size": 26,
+        "services_title_padding_top": 6,
+        "services_title_padding_bottom": 6,
+        "services_title_padding_right": 8,
+        "services_title_padding_left": 0,
+        "description_color": "#f1f1f1",
+        "services_description_font_size": 15,
+        "services_description_padding_top": 0,
+        "services_description_padding_bottom": 0,
+        "services_description_padding_right": 0,
+        "services_description_padding_left": 0,
+        "button_text_color": "#121212",
+        "button_background_color": "#ffffff"
+      }
+    },
+    "74d6fab0-af3e-48f0-aae6-eb499f62ce75": {
+      "type": "About-Section",
+      "settings": {
+        "about_section-background_color": "#ffffff",
+        "about_section_padding_top": 7,
+        "about_section_padding_bottom": 13,
+        "about_section_padding_right": 20,
+        "about_section_padding_left": 20,
+        "about_heading": "Give Your Workout<br> A New Style!",
+        "about_heading_color": "#000000",
+        "about_heading_padding_top": 3,
+        "about_heading_padding_bottom": 0,
+        "about_heading_padding_right": 0,
+        "about_heading_padding_left": 0,
+        "about_heading_font_size": 30,
+        "about_heading_margin_top": 9,
+        "about_heading_margin_bottom": 8,
+        "about_heading_margin_right": 4,
+        "about_heading_margin_left": 0,
+        "about_text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam blanditiis, voluptatem tempora eum nemo natus laboriosam debitis doloremque explicabo ullam.",
+        "about_text_color": "#000000",
+        "about_text_padding_top": 0,
+        "about_text_padding_bottom": 0,
+        "about_text_padding_right": 0,
+        "about_text_padding_left": 0,
+        "about_text_font_size": 18,
+        "about_button_link_url": "",
+        "About_button": "Explore Now",
+        "about_button_background_color": "#ff523b",
+        "about_button_color": "#ffffff",
+        "about_button_padding_top": 8,
+        "about_button_padding_bottom": 8,
+        "about_button_padding_right": 30,
+        "about_button_padding_left": 30,
+        "about_button_font_size": 22,
+        "about_button_margin_top": 15,
+        "about_button_margin_bottom": 15,
+        "about_button_margin_right": 5,
+        "about_button_margin_left": 0,
+        "about_button_hover_background_color": "#563434",
+        "about_button_hover_color": "#ffffff",
+        "about_link_url": "",
+        "about_img": "shopify:\/\/shop_images\/image1.png",
+        "about_img_padding_top": 10,
+        "about_img_padding_bottom": 10,
+        "about_img_padding_right": 10,
+        "about_img_padding_left": 10,
+        "about_image_margin": 6
+      }
+    },
+    "dc5777a3-da88-4759-a325-79b4369c194c": {
+      "type": "Custom-Reviews-Section",
+      "blocks": {
+        "26439e4d-44a5-485e-b56f-c4f2425bd23e": {
+          "type": "Box",
+          "settings": {
+            "verified-text": "Verifiziert",
+            "reviews_title": "Super schnelle Lieferung",
+            "reviews_description": "Superschnelle Lieferung und der entsprechende Preis waren für mich ausschlaggebend.",
+            "customer-name": ""
+          }
+        },
+        "ba168fb0-487a-42ef-af6a-170c488c62f5": {
+          "type": "Box",
+          "settings": {
+            "verified-text": "Verifiziert",
+            "reviews_title": "Super schnelle Lieferung",
+            "reviews_description": "Superschnelle Lieferung und der entsprechende Preis waren für mich ausschlaggebend.",
+            "customer-name": ""
+          }
+        },
+        "c572275b-36fd-49e2-b1e2-e65b16ddcfce": {
+          "type": "Box",
+          "settings": {
+            "verified-text": "Verifiziert",
+            "reviews_title": "Super schnelle Lieferung",
+            "reviews_description": "Superschnelle Lieferung und der entsprechende Preis waren für mich ausschlaggebend.",
+            "customer-name": ""
+          }
+        },
+        "b3b4d1fe-ac00-44f0-a38d-e54e9e441776": {
+          "type": "Box",
+          "settings": {
+            "verified-text": "Verifiziert",
+            "reviews_title": "Super schnelle Lieferung",
+            "reviews_description": "Superschnelle Lieferung und der entsprechende Preis waren für mich ausschlaggebend.",
+            "customer-name": ""
+          }
+        }
+      },
+      "block_order": [
+        "26439e4d-44a5-485e-b56f-c4f2425bd23e",
+        "ba168fb0-487a-42ef-af6a-170c488c62f5",
+        "c572275b-36fd-49e2-b1e2-e65b16ddcfce",
+        "b3b4d1fe-ac00-44f0-a38d-e54e9e441776"
+      ],
+      "settings": {
+        "reviews-text_color": "#000000",
+        "text_color": "#000000",
+        "box_color": "#ffffff",
+        "span_text_color": "#ffffff"
+      }
+    },
+    "d4e667ee-4748-4c09-a526-ec4d27c26472": {
+      "type": "Custom-Video-Section",
+      "blocks": {
+        "a3466b0f-fccb-455f-9e18-2a97e74a2f66": {
+          "type": "Video-box",
+          "settings": {
+            "nx_video-link_url": "https:\/\/www.youtube.com\/embed\/a9abIaFWm4w"
+          }
+        },
+        "823be5b7-5933-42d5-bb10-638a923e0670": {
+          "type": "Video-box",
+          "settings": {
+            "nx_video-link_url": "https:\/\/www.youtube.com\/embed\/a9abIaFWm4w"
+          }
+        },
+        "55a44ed6-d9a6-41ad-a968-f299271af721": {
+          "type": "Video-box",
+          "settings": {
+            "nx_video-link_url": "https:\/\/www.youtube.com\/embed\/a9abIaFWm4w"
+          }
+        },
+        "2533011a-e087-4a11-b4c9-04c5427ab274": {
+          "type": "Video-box",
+          "disabled": true,
+          "settings": {
+            "nx_video-link_url": "https:\/\/www.youtube.com\/embed\/a9abIaFWm4w"
+          }
+        },
+        "96844233-55fc-4e67-a553-9719c9008585": {
+          "type": "Video-box",
+          "disabled": true,
+          "settings": {
+            "nx_video-link_url": "https:\/\/www.youtube.com\/embed\/a9abIaFWm4w"
+          }
+        },
+        "7ce7c109-8e03-4d6c-af84-8efd4c9e25bd": {
+          "type": "Video-box",
+          "disabled": true,
+          "settings": {
+            "nx_video-link_url": "https:\/\/www.youtube.com\/embed\/a9abIaFWm4w"
+          }
+        }
+      },
+      "block_order": [
+        "a3466b0f-fccb-455f-9e18-2a97e74a2f66",
+        "823be5b7-5933-42d5-bb10-638a923e0670",
+        "55a44ed6-d9a6-41ad-a968-f299271af721",
+        "2533011a-e087-4a11-b4c9-04c5427ab274",
+        "96844233-55fc-4e67-a553-9719c9008585",
+        "7ce7c109-8e03-4d6c-af84-8efd4c9e25bd"
+      ],
+      "settings": {
+        "nx_video_section_background_color": "#ffffff",
+        "nx_video_section_padding_top": 10,
+        "nx_video_section_padding_bottom": 10,
+        "nx_video_section_padding_right": 10,
+        "nx_video_section_padding_left": 10,
+        "nx_video_heading": "Video Section",
+        "nx_video_heading_color": "#000000",
+        "nx_video_heading_padding_top": 5,
+        "nx_video_heading_padding_bottom": 10,
+        "nx_video_heading_font_size": 30,
+        "nx_video_heading_font_weight": 600
+      }
+    },
+    "d74cd799-2da5-4dfd-8853-213747480237": {
+      "type": "Custom-Image-Section",
+      "blocks": {
+        "ddfd3965-8135-4a86-b75c-35014e6929a2": {
+          "type": "image-box",
+          "settings": {
+            "img-link_url": "",
+            "section-image": "shopify:\/\/shop_images\/img-4.png"
+          }
+        },
+        "572b1397-0b1b-494e-8493-473a57f60da4": {
+          "type": "image-box",
+          "settings": {
+            "img-link_url": "",
+            "section-image": "shopify:\/\/shop_images\/img-1.png"
+          }
+        },
+        "3872a1a3-6679-40ab-8ddd-5eab80085b25": {
+          "type": "image-box",
+          "settings": {
+            "img-link_url": "",
+            "section-image": "shopify:\/\/shop_images\/img-2.png"
+          }
+        },
+        "5c0064e5-f579-4911-bf70-bc0330a05802": {
+          "type": "image-box",
+          "settings": {
+            "img-link_url": "",
+            "section-image": "shopify:\/\/shop_images\/img-5.png"
+          }
+        }
+      },
+      "block_order": [
+        "ddfd3965-8135-4a86-b75c-35014e6929a2",
+        "572b1397-0b1b-494e-8493-473a57f60da4",
+        "3872a1a3-6679-40ab-8ddd-5eab80085b25",
+        "5c0064e5-f579-4911-bf70-bc0330a05802"
+      ],
+      "settings": {
+        "img-section-background_color": "#ffffff",
+        "img-section_padding_top": 0,
+        "img-section_padding_bottom": 55,
+        "img-section_padding_right": 15,
+        "img-section_padding_left": 15,
+        "img_heading": "Image Section",
+        "heading_color": "#000000",
+        "heading_padding_top": 11,
+        "heading_padding_bottom": 17,
+        "heading_font_size": 30,
+        "img-box_padding_top": 15,
+        "img-box_padding_bottom": 15,
+        "img-box_padding_right": 15,
+        "img-box_padding_left": 15,
+        "img_padding_top": 15,
+        "img_padding_bottom": 15,
+        "img_padding_right": 15,
+        "img_padding_left": 15
+      }
+    },
+    "f67f27c2-e4fe-4aa0-a8c0-671f015f22d0": {
+      "type": "Custom-Offer-Section",
+      "settings": {
+        "radial_gradient_center": "#ffffff",
+        "radial_gradient_outer": "#ffd6d6",
+        "background_gradient_start": "rgba(0,0,0,0)",
+        "background_gradient_end": "rgba(0,0,0,0)",
+        "offer_container_max_width": "1080px",
+        "offer_section_display": "flex",
+        "offer_section_justify_content": "center",
+        "offer_section_padding_top": 39,
+        "offer_section_padding_bottom": 18,
+        "offer_section_padding_right": 10,
+        "offer_section_padding_left": 0,
+        "offer_text_align": "left",
+        "offer_link_url": "",
+        "offer_img": "shopify:\/\/shop_images\/exclusive.png",
+        "offer_img_max_width": 70,
+        "offer_img_padding_top": 0,
+        "offer_img_padding_bottom": 10,
+        "offer_img_padding_right": 10,
+        "offer_img_padding_left": 0,
+        "offer_text": "Exclusively Available on RedStore",
+        "offer_text_color": "#121212",
+        "offer_text_padding_top": 0,
+        "offer_text_padding_bottom": 0,
+        "offer_text_padding_right": 0,
+        "offer_text_padding_left": 0,
+        "offer_text_font_size": 12,
+        "offer_heading": "Start Band",
+        "offer_heading_color": "#000000",
+        "offer_heading_padding_top": 0,
+        "offer_heading_padding_bottom": 0,
+        "offer_heading_padding_right": 0,
+        "offer_heading_padding_left": 0,
+        "offer_heading_font_size": 35,
+        "offer_heading_margin_top": 20,
+        "offer_heading_margin_bottom": 20,
+        "offer_heading_margin_right": 0,
+        "offer_heading_margin_left": 0,
+        "offer_content": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus enim magnam dolorum officiis sed voluptate explicabo inventore sequi optio molestiae nemo voluptatum quo eius quis saepe qui, id non laborum?",
+        "offer_button_link_url": "",
+        "offer_button": "Buy Now",
+        "offer_button_background_color": "#ff523b",
+        "offer_button_hover_background_color": "#563434",
+        "offer_button_color": "#ffffff",
+        "offer_button_hover_color": "#ffffff",
+        "offer_button_padding_top": 8,
+        "offer_button_padding_bottom": 8,
+        "offer_button_padding_right": 28,
+        "offer_button_padding_left": 41,
+        "offer_button_display": "inline-block",
+        "offer_button_border_radius": 30,
+        "offer_button_font_size": 16,
+        "offer_button_margin_top": 19,
+        "offer_button_margin_bottom": 19,
+        "offer_button_margin_right": 0,
+        "offer_button_margin_left": 0
+      }
+    },
+    "701d5089-45b0-46de-a954-297a73dc5eaf": {
+      "type": "Custom-Testimonial-Section",
+      "blocks": {
+        "d95a9e56-b79c-4b8f-a587-5cbba3a1b418": {
+          "type": "image-box",
+          "settings": {
+            "testimonial_text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam blanditiis, voluptatem tempora eum nemo natus laboriosam debitis doloremque explicabo ullam.",
+            "testimonial-image": "shopify:\/\/shop_images\/user-1.png",
+            "testimonial_heading": "Jane Smith"
+          }
+        },
+        "19e7dff3-8fc8-444f-8347-7d3d7a0f9bfe": {
+          "type": "image-box",
+          "settings": {
+            "testimonial_text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam blanditiis, voluptatem tempora eum nemo natus laboriosam debitis doloremque explicabo ullam.",
+            "testimonial-image": "shopify:\/\/shop_images\/user-2.png",
+            "testimonial_heading": "Jane Smith"
+          }
+        },
+        "7ada7dac-e00c-47b0-b8cc-cf63d7e92338": {
+          "type": "image-box",
+          "settings": {
+            "testimonial_text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam blanditiis, voluptatem tempora eum nemo natus laboriosam debitis doloremque explicabo ullam.",
+            "testimonial-image": "shopify:\/\/shop_images\/user-3.png",
+            "testimonial_heading": "Jane Smith"
+          }
+        }
+      },
+      "block_order": [
+        "d95a9e56-b79c-4b8f-a587-5cbba3a1b418",
+        "19e7dff3-8fc8-444f-8347-7d3d7a0f9bfe",
+        "7ada7dac-e00c-47b0-b8cc-cf63d7e92338"
+      ],
+      "settings": {
+        "testimonial_section_background_color": "#ffffff",
+        "testimonial_section_padding_top": 23,
+        "testimonial_section_padding_bottom": 20,
+        "testimonial_section_padding_right": 5,
+        "testimonial_section_padding_left": 5,
+        "testimonial_main_heading": "Testimonial",
+        "testimonial_main_heading_color": "#000000",
+        "testimonial_main_heading_padding_top": 15,
+        "testimonial_main_heading_padding_bottom": 15,
+        "testimonial_main_heading_font_size": 32,
+        "testimonial_main_heading_font_weight": 600,
+        "testimonial_main_heading_text_align": "center",
+        "testimonial_container_padding_top": 50,
+        "testimonial_container_padding_bottom": 44,
+        "testimonial_container_padding_right": 25,
+        "testimonial_container_padding_left": 25,
+        "testimonial_container_max_width": "1080px",
+        "testimonial_container_display": "grid",
+        "testimonial_box_text_align": "center",
+        "testimonial_box_padding_top": 40,
+        "testimonial_box_padding_bottom": 40,
+        "testimonial_box_padding_right": 20,
+        "testimonial_box_padding_left": 20,
+        "testimonial_main_icon_color": "#ff523b",
+        "testimonial_main_icon_font_size": 34,
+        "testimonial_text_color": "#777777",
+        "testimonial_text_margin_top": 12,
+        "testimonial_text_margin_bottom": 12,
+        "testimonial_text_margin_left": 0,
+        "testimonial_text_margin_right": 0,
+        "testimonial_text_font_size": 12,
+        "testimonial_icon_color": "#ff523b",
+        "testimonial_img_width": 50,
+        "testimonial_margin_top": 20,
+        "testimonial_margin_bottom": 0,
+        "testimonial_margin_left": 0,
+        "testimonial_margin_right": 0,
+        "testimonial_img_border_radius": 50,
+        "testimonial_heading_color": "#555555",
+        "testimonial_heading_font_size": 18,
+        "testimonial_heading_font_weight": 600
+      }
+    },
+    "a05fe0a6-c91f-49c1-a142-6a7916645aa8": {
+      "type": "Custom-Client-Logo",
+      "blocks": {
+        "f175bde7-2fae-46f0-8f3a-fbcdedaeaa30": {
+          "type": "image-box",
+          "disabled": true,
+          "settings": {
+            "client_logo_link_url": "",
+            "client_logo_image": "shopify:\/\/shop_images\/img4.png"
+          }
+        },
+        "d0fd713c-860e-4837-a9ff-53c1ee5452d6": {
+          "type": "image-box",
+          "disabled": true,
+          "settings": {
+            "client_logo_link_url": "",
+            "client_logo_image": "shopify:\/\/shop_images\/img4.png"
+          }
+        },
+        "11ec50a0-4375-4708-b43e-fec293cef393": {
+          "type": "image-box",
+          "disabled": true,
+          "settings": {
+            "client_logo_link_url": "",
+            "client_logo_image": "shopify:\/\/shop_images\/img4.png"
+          }
+        },
+        "1e140f86-1b95-4094-baca-a9cb1c8d7002": {
+          "type": "image-box",
+          "disabled": true,
+          "settings": {
+            "client_logo_link_url": "",
+            "client_logo_image": "shopify:\/\/shop_images\/img4.png"
+          }
+        },
+        "fe865d18-1900-4e46-9c1c-0ed027fbb430": {
+          "type": "image-box",
+          "settings": {
+            "client_logo_link_url": "",
+            "client_logo_image": "shopify:\/\/shop_images\/logo-godrej.png"
+          }
+        },
+        "858abbcf-02ed-47b7-8b55-4640083e6538": {
+          "type": "image-box",
+          "settings": {
+            "client_logo_link_url": "",
+            "client_logo_image": "shopify:\/\/shop_images\/logo-coca-cola.png"
+          }
+        },
+        "7d69dd65-d6cb-4504-9fea-5553afda207b": {
+          "type": "image-box",
+          "settings": {
+            "client_logo_link_url": "",
+            "client_logo_image": "shopify:\/\/shop_images\/logo-oppo.png"
+          }
+        },
+        "f2c9f140-9de1-48d0-bcfe-8d9ada66fb00": {
+          "type": "image-box",
+          "settings": {
+            "client_logo_link_url": "",
+            "client_logo_image": "shopify:\/\/shop_images\/logo-godrej.png"
+          }
+        },
+        "58514f3d-90e0-4c83-9b66-e3897e1c7e45": {
+          "type": "image-box",
+          "settings": {
+            "client_logo_link_url": "",
+            "client_logo_image": "shopify:\/\/shop_images\/logo-paypal.png"
+          }
+        },
+        "1c848b89-1a85-4cdf-aa7c-77d33316f576": {
+          "type": "image-box",
+          "settings": {
+            "client_logo_link_url": "",
+            "client_logo_image": "shopify:\/\/shop_images\/logo-coca-cola.png"
+          }
+        },
+        "ff98a403-5156-4ab8-8717-763e5031c5e4": {
+          "type": "image-box",
+          "settings": {
+            "client_logo_link_url": "",
+            "client_logo_image": "shopify:\/\/shop_images\/logo-godrej.png"
+          }
+        },
+        "4c5a2045-04f9-439a-bbb1-a601419e839b": {
+          "type": "image-box",
+          "settings": {
+            "client_logo_link_url": "",
+            "client_logo_image": "shopify:\/\/shop_images\/logo-oppo.png"
+          }
+        },
+        "72a77077-3ee4-4b46-8e90-3cb09620a443": {
+          "type": "image-box",
+          "settings": {
+            "client_logo_link_url": "",
+            "client_logo_image": "shopify:\/\/shop_images\/logo-paypal.png"
+          }
+        },
+        "11bd3386-be07-48e4-ac9e-8b4b34bef805": {
+          "type": "image-box",
+          "settings": {
+            "client_logo_link_url": "",
+            "client_logo_image": "shopify:\/\/shop_images\/logo-coca-cola.png"
+          }
+        },
+        "d847a991-2b5d-4e7e-8d0d-441384cb3cfe": {
+          "type": "image-box",
+          "settings": {
+            "client_logo_link_url": "",
+            "client_logo_image": "shopify:\/\/shop_images\/logo-oppo.png"
+          }
+        },
+        "c1387e14-d8fa-4b76-be40-ba68fec3a5a9": {
+          "type": "image-box",
+          "settings": {
+            "client_logo_link_url": "",
+            "client_logo_image": "shopify:\/\/shop_images\/logo-godrej.png"
+          }
+        },
+        "68f2206f-43e9-4eee-8780-0bf8fcc3b373": {
+          "type": "image-box",
+          "settings": {
+            "client_logo_link_url": "",
+            "client_logo_image": "shopify:\/\/shop_images\/logo-paypal.png"
+          }
+        },
+        "918eb732-b946-4a19-a496-beb0c026f273": {
+          "type": "image-box",
+          "settings": {
+            "client_logo_link_url": "",
+            "client_logo_image": "shopify:\/\/shop_images\/logo-coca-cola.png"
+          }
+        },
+        "fd3ae53f-f5d7-46db-a7cd-ae462738a46a": {
+          "type": "image-box",
+          "settings": {
+            "client_logo_link_url": "",
+            "client_logo_image": "shopify:\/\/shop_images\/logo-paypal.png"
+          }
+        }
+      },
+      "block_order": [
+        "f175bde7-2fae-46f0-8f3a-fbcdedaeaa30",
+        "d0fd713c-860e-4837-a9ff-53c1ee5452d6",
+        "11ec50a0-4375-4708-b43e-fec293cef393",
+        "1e140f86-1b95-4094-baca-a9cb1c8d7002",
+        "fe865d18-1900-4e46-9c1c-0ed027fbb430",
+        "858abbcf-02ed-47b7-8b55-4640083e6538",
+        "7d69dd65-d6cb-4504-9fea-5553afda207b",
+        "f2c9f140-9de1-48d0-bcfe-8d9ada66fb00",
+        "58514f3d-90e0-4c83-9b66-e3897e1c7e45",
+        "1c848b89-1a85-4cdf-aa7c-77d33316f576",
+        "ff98a403-5156-4ab8-8717-763e5031c5e4",
+        "4c5a2045-04f9-439a-bbb1-a601419e839b",
+        "72a77077-3ee4-4b46-8e90-3cb09620a443",
+        "11bd3386-be07-48e4-ac9e-8b4b34bef805",
+        "d847a991-2b5d-4e7e-8d0d-441384cb3cfe",
+        "c1387e14-d8fa-4b76-be40-ba68fec3a5a9",
+        "68f2206f-43e9-4eee-8780-0bf8fcc3b373",
+        "918eb732-b946-4a19-a496-beb0c026f273",
+        "fd3ae53f-f5d7-46db-a7cd-ae462738a46a"
+      ],
+      "settings": {
+        "clients_section_background_color": "#ffffff",
+        "clients_section_padding_top": 18,
+        "clients_section_padding_bottom": 26,
+        "clients_section_padding_right": 10,
+        "clients_section_padding_left": 10,
+        "clients_section_text_align": "center",
+        "client_heading": "Our Clients",
+        "client_heading_color": "#000000",
+        "client_heading_padding_top": 15,
+        "client_heading_padding_bottom": 10,
+        "client_heading_font_size": 44,
+        "client_heading_font_weight": 600,
+        "client_text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam blanditiis, voluptatem tempora eum nemo natus laboriosam debitis doloremque explicabo ullam.\nLorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam blanditiis, voluptatem tempora eum nemo natus laboriosam debitis doloremque explicabo ullam.",
+        "client_text_color": "#000000",
+        "client_text_font_size": 14,
+        "client_text_font_weight": 100,
+        "client_text_margin_top": 12,
+        "client_text_margin_bottom": 12,
+        "client_text_margin_left": 60,
+        "client_text_margin_right": 60,
+        "client_max_width": "1200px",
+        "column_gap": 1,
+        "client_box_margin_top": 0,
+        "client_box_margin_bottom": 0,
+        "client_box_margin_right": 0,
+        "client_box_margin_left": 0,
+        "clients_img_width": 80,
+        "clients_img_filter_intensity": 0,
+        "clients_img_hover_filter_intensity": 40
+      }
+    },
+    "1e90b682-f155-46eb-9136-6336a089efa9": {
+      "type": "NX-Column-With-Icon",
+      "blocks": {
+        "712e9f87-0787-49e0-bdb1-79969629fc55": {
+          "type": "col",
+          "settings": {
+            "nx_icon": "shopify:\/\/shop_images\/Cart_Icon_large_d2136b6b-5f3f-4a4c-b442-f411b3f91f4c.webp",
+            "nx_header": "Header Skip the Formalities & Cut to the Chasename",
+            "nx_headercolor": "",
+            "nx_headingsizecol": 25,
+            "nx_headingsizecol_font_weight": 600,
+            "nx_description": "<p>The SweetFunnels single-product theme has an instant checkout system that lets customers skip the cart and brings them straight to checkout, smoothing the checkout process.<\/p>",
+            "nx_descriptioncolor": "",
+            "nx_descriptionsize": 16
+          }
+        },
+        "efc82d2d-bf6d-4ec1-baae-5f7e65006aaa": {
+          "type": "col",
+          "settings": {
+            "nx_icon": "shopify:\/\/shop_images\/Funnel_Icon_large_6490fa11-3912-4b49-92e5-2cd3746cec70.webp",
+            "nx_header": "Conversion-focused Shopify Theme",
+            "nx_headercolor": "#000000",
+            "nx_headingsizecol": 25,
+            "nx_headingsizecol_font_weight": 600,
+            "nx_description": "<p>It comes with pre-built layouts designed based on hundreds of successful stores. It helps you optimize your conversions and make the most of your traffic.<\/p>",
+            "nx_descriptioncolor": "",
+            "nx_descriptionsize": 16
+          }
+        },
+        "d8efc974-cc43-4a21-bafa-d522b3efb6bd": {
+          "type": "col",
+          "settings": {
+            "nx_icon": "shopify:\/\/shop_images\/Shopify_Icon_large_13db0e48-9bfb-4c43-8863-8485c21eb599.webp",
+            "nx_header": "Build a Successful Drop shipping Store",
+            "nx_headercolor": "#000000",
+            "nx_headingsizecol": 25,
+            "nx_headingsizecol_font_weight": 600,
+            "nx_description": "<p>No need for customization and tweaking. This theme is fully compatible with the most popular drop shipping apps, like DS ers, CJ Drop shipping, Loox reviews and many more.<\/p>",
+            "nx_descriptioncolor": "",
+            "nx_descriptionsize": 16
+          }
+        }
+      },
+      "block_order": [
+        "712e9f87-0787-49e0-bdb1-79969629fc55",
+        "efc82d2d-bf6d-4ec1-baae-5f7e65006aaa",
+        "d8efc974-cc43-4a21-bafa-d522b3efb6bd"
+      ],
+      "settings": {
+        "nx_bgcolor": "#f1f1f1",
+        "nx_header": "SWEETFUNNELS FEATURES",
+        "nx_headercolor": "#000000",
+        "nx_headingsize": 30,
+        "nx_header_font_weight": 600
+      }
+    },
+    "bc7fb6da-965c-4f3b-b6e7-d22e49ce1972": {
+      "type": "Custom-List-Section",
+      "blocks": {
+        "67e70bd1-9648-4728-bf6f-96f070054090": {
+          "type": "richtext",
+          "settings": {
+            "nx_list_paragraph": "<p>So, what are you waiting for? Create your brand from scratch and start selling today.<\/p>",
+            "nx_list_paragraphcolor": ""
+          }
+        }
+      },
+      "block_order": [
+        "67e70bd1-9648-4728-bf6f-96f070054090"
+      ],
+      "settings": {
+        "nx_list_bgimagedesktop": "shopify:\/\/shop_images\/download_4a12a8f1-f222-467d-9773-9b2a21cf7fce.webp",
+        "nx_list_bgimagemobile": "shopify:\/\/shop_images\/download_4a12a8f1-f222-467d-9773-9b2a21cf7fce.webp",
+        "nx_list_headertext": "We Make Creating Branded Stores A Breeze",
+        "nx_list_headercolor": "#121212",
+        "nx_list_headersize": 29,
+        "nx_list_descriptionsize": 29,
+        "nx_list_description_line_height": 39,
+        "nx_list_pointsize": 31,
+        "nx_list_linkvideo": "#",
+        "nx_list_watchvideo": false,
+        "nx_list_buybutton": true,
+        "nx_list_product-handle": "",
+        "nx_list_btnfontcolor": "#ffffff",
+        "nx_list_btnbordercolor": "#334fb4",
+        "nx_list_btnbgcolor": "#334fb4",
+        "nx_list_btnwatchfontcolor": "",
+        "nx_list_btnwatchbordercolor": "",
+        "nx_list_btnwatchbgcolor": ""
+      }
+    },
+    "f3604e5d-6f23-468f-b4a3-7c38a5b29cf0": {
+      "type": "Custom-Hero-Section",
+      "settings": {
+        "nx_hero_leftimage": "shopify:\/\/shop_images\/thirdparty-api.png",
+        "nx_hero_rightimage": "shopify:\/\/shop_images\/download_4a12a8f1-f222-467d-9773-9b2a21cf7fce.webp",
+        "nx_hero_headertext": "Full-featured Shopify Theme for High converting One Product Stores",
+        "nx_hero_headercolor": "",
+        "nx_hero_headersize": 42,
+        "nx_hero_header_line_height": 44,
+        "nx_hero_description": "<p>Look like a pro from the get-go with an all-in-one Shopify theme designed for single-product stores<\/p>",
+        "nx_hero_descriptioncolor": "",
+        "nx_hero_descriptionsize": 24,
+        "nx_hero_description_line_height": 44,
+        "nx_hero_product-handle": "",
+        "nx_hero_linkvideo": "#",
+        "nx_hero_watchvideo": true,
+        "nx_hero_buybutton": true,
+        "nx_hero_btnfontcolor": "#ffffff",
+        "nx_hero_btnbordercolor": "#1773b0",
+        "nx_hero_btnbgcolor": "#1773b0",
+        "nx_hero_btnwatchfontcolor": "#ffffff",
+        "nx_hero_btnwatchbordercolor": "#00aeef",
+        "nx_hero_btnwatchbgcolor": "#00aeef",
+        "nx_hero_mobilebgcolor": "#ffffff"
+      }
+    },
+    "ca176374-b16c-47f8-b119-ae6be9ec717a": {
+      "type": "Custom-Video",
+      "settings": {
+        "video_url": "https:\/\/www.youtube.com\/watch?v=ZdJSHEczi_0",
+        "alt": ""
+      }
+    },
+    "d62d8b19-9c64-47c0-8b46-0f56fb573b7f": {
+      "type": "Image-With-right",
+      "settings": {
+        "nxheadertext": "Save up to $500 per Month on Subscriptions",
+        "nxheadercolor": "#121212",
+        "nxheader_line_height": 40,
+        "nxheadingsize": 26,
+        "nxheading_font_weight": "bold",
+        "nxheader_padding_top": 20,
+        "nxheader_padding_bottom": 14,
+        "nxheader_padding_right": 0,
+        "nxheader_padding_left": 0,
+        "nxdescription": "This is a one-time purchase. There are no hidden fees, paid add-ons or upgrades. What you see is what you get, with all the premium features for free. Save hundreds of dollars on paid apps and add-ons. Set up your single-product store with premium add-ons in just a few clicks, and start selling like nobody's business.",
+        "nxdescriptioncolor": "#121212",
+        "nxdescriptionsize": 19,
+        "nxdescription_line_height": 24,
+        "nxdescription_font_weight": "normal",
+        "nxdescription_padding_top": 0,
+        "nxdescription_padding_bottom": 0,
+        "nxdescription_padding_right": 0,
+        "nxdescription_padding_left": 0,
+        "product-handle": "",
+        "buybutton": true,
+        "btnfontcolor": "#ffffff",
+        "btnbordercolor": "#334fb4",
+        "btnbgcolor": "#334fb4"
+      }
+    },
+    "678cc99d-5cf4-435a-a669-0b993682114c": {
+      "type": "Custom-FAQ-Section",
+      "blocks": {
+        "11cdd666-763f-452d-81f3-cdb4ce4d1b79": {
+          "type": "faq-section",
+          "settings": {
+            "faq_subitem_checkbox": false,
+            "faq_heading": "Description",
+            "faq_description": "<p>Make every round memorable! ⛳ Our '19th Hole Golf Personalized Sign' adds a dash of personal pride to your favorite golfing spot, highlighting your family's name and cherished location. 📍<br\/><\/p><p><strong>Why Tailored Canvases?<br\/><\/strong><br\/>1️⃣  <strong>Personalization:<\/strong> Turn your favorite memories into beautiful, unique pieces of art that can be cherished for a lifetime.<\/p><p>2️⃣ <strong>Museum-Quality Printing: <\/strong>Display your photos and artwork in stunning detail, with sharp images and vivid colors that will make your memories come alive.<\/p><p>3️⃣ <strong>Customizable Sizes & Styles:<\/strong> Get the perfect fit for your space, to create a truly personalized and cohesive look in your home or office.<\/p><p>4️⃣ <strong>Durable & Long-Lasting:<\/strong> Protect your cherished memories with a canvas that is built to last, resisting damage and fading over time.<\/p><p>5️⃣ <strong>Over 18,579 Five-Star Reviews: <\/strong>Join the thousands of satisfied customers who trust us to turn their memories into lasting works of art.<\/p><p><strong>Our canvases are:<\/strong><br\/><\/p><p>✅ <strong>100% American-Made Quality:<\/strong> Proudly support American craftsmanship with a custom canvas print that's made in the USA with the highest standards of quality.<\/p><p>✅ <strong>Premium 1.5\" Thick Canvas: <\/strong>Enjoy lasting beauty with a canvas that's 10x more durable than standard options, providing long-lasting protection for your cherished memories.<\/p><p>✅ <strong>UV-Resistant Ink for Decades of Vibrant Color: <\/strong>Display your photos and artwork with confidence, with UV-resistant ink that prevents fading and deterioration over time.<\/p><p>✅ <strong>Customized to Your Exact Specification: <\/strong>Get a perfect fit for your space and your style, with a custom canvas print that's made just for you based on your specifications.<\/p><p>✅ <strong>Free & Fast Shipping: <\/strong>﻿Get your custom canvas print delivered to your door with ease, with free and fast shipping via FedEx.<\/p><p>Get‌ ‌a‌ ‌premium‌ ‌home‌ ‌decor‌ ‌piece‌ ‌that’s‌ ‌specially‌ ‌made‌ ‌for‌ ‌you when you order a customized cattle ranch wall decor from Tailored Canvases.‌ ‌‌Click‌ ‌the‌<strong> ‌‘ADD‌ ‌TO‌ ‌CART’‌ <\/strong>button‌ ‌and‌ ‌get an initial proof in 24 hours! <\/p>"
+          }
+        },
+        "9b2f3245-3532-4c3a-878f-91817596fa22": {
+          "type": "faq-section",
+          "settings": {
+            "faq_subitem_checkbox": false,
+            "faq_heading": "Shipping",
+            "faq_description": "<p><strong>HOW MUCH DOES THE SHIPPING COST?<\/strong><br\/>Shipping varies by canvas size and will be calculated at checkout!<br\/><br\/><strong>WHERE DO YOU SHIP FROM?<\/strong><br\/>All of our orders are printed and shipped from our facility in Orlando, Florida.<\/p><p><strong>WHEN WILL I RECEIVE MY ORDER?<\/strong><br\/>Our smart dynamic routing system will automatically assign your order to the closest facility with a 1-3 days of delivery time once shipped.<br\/>The items are customized print on demand only after you purchase them so please allow 1-3 days for production as well.<\/p><p><strong>WHERE CAN I TRACK MY ORDER?<\/strong><br\/>Once your order ships, you will receive a tracking number to the email you used when checking out. <br\/><\/p><p><strong>WHAT IS YOUR RETURN \/ EXCHANGE POLICY?<\/strong><br\/>If you're not 100% satisfied within the first <strong>30 days<\/strong> of receiving your product, let us know and we'll do our best to make it right.<br\/>Hassle free return\/exchange policy!<br\/>Please contact us at  with any questions.<br\/><br\/>More info on our returns can be found on the Returns Policy Page.<br\/><br\/><\/p><p><strong>DO YOU OFFER REFUNDS?<\/strong><br\/>YES! We offer refunds if you meet the following:<br\/>Refunds must be requested within <strong>30 days<\/strong> of your purchase date.<br\/>Item must be in the same condition as you received it.<br\/>Email us at  with information on your order (email, order number, and information of why you are requesting a refund)<br\/>Once we process your refund, it will take 2-3 days to process through to your bank.<\/p><p><strong><br\/>HOW CAN I CONTACT YOU FOR ANY ADDITIONAL QUESTIONS?<\/strong><br\/>Email us at  - we will get back with you within one business day on average.<\/p>"
+          }
+        },
+        "a361558a-775b-4f21-ac50-b42dd8d54c5e": {
+          "type": "faq-section",
+          "disabled": true,
+          "settings": {
+            "faq_subitem_checkbox": false,
+            "faq_heading": "Description",
+            "faq_description": "<p>Every sign crafted with unique artistry<\/p>"
+          }
+        },
+        "1f514e69-26a8-46d8-8e60-b148d5d36f27": {
+          "type": "faq-section",
+          "disabled": true,
+          "settings": {
+            "faq_subitem_checkbox": false,
+            "faq_heading": "Description",
+            "faq_description": "<p>Every sign crafted with unique artistry<\/p>"
+          }
+        },
+        "8f85f0be-8f05-451e-8a41-826e5ec4f8d2": {
+          "type": "faq-section",
+          "settings": {
+            "faq_subitem_checkbox": false,
+            "faq_heading": "Description",
+            "faq_description": "<p>Every sign crafted with unique artistry<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "11cdd666-763f-452d-81f3-cdb4ce4d1b79",
+        "9b2f3245-3532-4c3a-878f-91817596fa22",
+        "a361558a-775b-4f21-ac50-b42dd8d54c5e",
+        "1f514e69-26a8-46d8-8e60-b148d5d36f27",
+        "8f85f0be-8f05-451e-8a41-826e5ec4f8d2"
+      ],
+      "settings": {
+        "faq_section_bgcolor": "#ffffff",
+        "faq_section_padding_top": 20,
+        "faq_section_padding_bottom": 20,
+        "faq_section_padding_right": 20,
+        "faq_section_padding_left": 20,
+        "faq_heading_color": "#141b4d"
+      }
+    },
+    "3eecf6c3-51c4-4f71-95d9-0acb42963375": {
+      "type": "Custom-Team-Section",
+      "blocks": {
+        "340a2472-d910-439b-abb6-8ded0bef8ac1": {
+          "type": "team-section",
+          "settings": {
+            "team-image": "shopify:\/\/shop_images\/user-3.png",
+            "team_name_heading": "John Doe",
+            "team_position": "CEO"
+          }
+        },
+        "b2b3754b-264c-4789-bcc4-9fc7ab965491": {
+          "type": "team-section",
+          "settings": {
+            "team-image": "shopify:\/\/shop_images\/user-2.png",
+            "team_name_heading": "John Doe",
+            "team_position": "CEO"
+          }
+        },
+        "ee39eace-e988-42eb-a20a-1a86e26664f1": {
+          "type": "team-section",
+          "settings": {
+            "team-image": "shopify:\/\/shop_images\/user-3.png",
+            "team_name_heading": "John Doe",
+            "team_position": "CEO"
+          }
+        },
+        "b0141662-9907-4dc2-8f1c-656d23bd850a": {
+          "type": "team-section",
+          "settings": {
+            "team-image": "shopify:\/\/shop_images\/user-2.png",
+            "team_name_heading": "John Doe",
+            "team_position": "CEO"
+          }
+        }
+      },
+      "block_order": [
+        "340a2472-d910-439b-abb6-8ded0bef8ac1",
+        "b2b3754b-264c-4789-bcc4-9fc7ab965491",
+        "ee39eace-e988-42eb-a20a-1a86e26664f1",
+        "b0141662-9907-4dc2-8f1c-656d23bd850a"
+      ],
+      "settings": {
+        "team_section_background_color": "#f7f7f7",
+        "team_section_padding_top": 25,
+        "team_section_padding_bottom": 25,
+        "team_section_padding_right": 0,
+        "team_section_padding_left": 0,
+        "team_name_color": "#000000",
+        "team_name_font_size": 18,
+        "team_name_margin_top": 0,
+        "team_name_margin_bottom": 0,
+        "team_subtitle_color": "#000000",
+        "team_subtitle_font_size": 14,
+        "team_subtitle_margin_top": 5,
+        "team_subtitle_margin_bottom": 5,
+        "team_box_background_color": "#ffffff",
+        "team_box_padding": 20
+      }
+    }
+  },
+  "order": [
+    "35afaa9b-3e81-4db8-bafa-676d9f3578e1",
+    "784e3433-e08c-459c-8f27-9a53353f8e87",
+    "image_banner",
+    "80a05280-fa77-4c86-a3fe-5c583d182923",
+    "40e48dfd-24c8-477d-aa0b-f44c52a996d3",
+    "3f772303-3d9b-46e5-831b-4298b5c0a30e",
+    "74d6fab0-af3e-48f0-aae6-eb499f62ce75",
+    "dc5777a3-da88-4759-a325-79b4369c194c",
+    "d4e667ee-4748-4c09-a526-ec4d27c26472",
+    "d74cd799-2da5-4dfd-8853-213747480237",
+    "f67f27c2-e4fe-4aa0-a8c0-671f015f22d0",
+    "701d5089-45b0-46de-a954-297a73dc5eaf",
+    "a05fe0a6-c91f-49c1-a142-6a7916645aa8",
+    "1e90b682-f155-46eb-9136-6336a089efa9",
+    "bc7fb6da-965c-4f3b-b6e7-d22e49ce1972",
+    "f3604e5d-6f23-468f-b4a3-7c38a5b29cf0",
+    "ca176374-b16c-47f8-b119-ae6be9ec717a",
+    "d62d8b19-9c64-47c0-8b46-0f56fb573b7f",
+    "678cc99d-5cf4-435a-a669-0b993682114c",
+    "3eecf6c3-51c4-4f71-95d9-0acb42963375"
+  ]
+}

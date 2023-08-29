@@ -1,0 +1,194 @@
+
+<style>
+    .top-bar{
+      height: 100%; 
+      margin: 0 auto;
+      background-color: {{ section.settings.top_bar_bgcolor }};
+      text-align: center;
+      padding-top:{{ section.settings.top_bar_section_padding_top }}px;
+      padding-bottom:{{ section.settings.top_bar_section_padding_bottom }}px;
+      position: relative;
+    }
+    .top-bar strong{
+      color: {{ section.settings.top_bar_slider_heading }};
+      font-size: 12px; 
+      text-transform: uppercase; 
+    }
+    
+    .top-bar p{
+      margin: 0;
+      color: #9fa3b8; 
+      font-size: 12px; 
+      margin-top:-5px;
+      line-height: 1.1em;
+    }
+ 
+    .top-bar-content{
+        border-right: 1px solid #c4c1c1;
+    }
+    .slick-slider{
+        position: relative;
+        display: block;
+        box-sizing: border-box;
+        user-select: none;
+        -webkit-touch-callout: none;
+        touch-action: pan-y;
+        -webkit-tap-highlight-color: transparent;
+    }
+    
+    
+    .slick-list{
+        position: relative;
+        display: block;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+    }
+    
+    
+    .slick-list:focus{
+        outline: none;
+    }
+    .slick-track{
+        position: relative;
+        top: 0;
+        left: 0;
+        display: block;
+    }
+    
+    
+    .slick-track:before,
+    .slick-track:after{
+        display: table;
+        content: '';
+    }
+    
+    
+    .slick-track:after{
+        clear: both;
+    }
+    
+    
+    .slick-loading .slick-track{
+        visibility: hidden;
+    }
+    
+    
+    .slick-slide{
+        display: none;
+        float: left;
+        height: 100%;
+        min-height: 1px;
+    }
+  
+    .slick-initialized .slick-slide{
+        display: block;
+    }
+    
+    
+    .slick-loading .slick-slide{
+        visibility: hidden;
+    }
+    
+    
+    .slick-vertical .slick-slide{
+        display: block;
+        height: auto;
+        border: 1px solid transparent;
+    }
+    
+    
+    .slick-arrow.slick-hidden{
+        display: none;
+    }
+     
+    /* media queries */
+    @media screen and (max-width: 768px){	
+        .top-bar{padding-top: 10px; width: 100%;}
+    }	
+    </style>
+
+      
+    <div class="top-bar">
+        
+        <div class="top-bar-slider">
+         {% for block in section.blocks %}  
+          <div class="top-bar-content">
+              <span>
+                <strong>{{ block.settings.top_bar_slider_heading }}</strong>
+                <p>{{ block.settings.top_bar_slider_text }}</p>
+              </span>
+          </div>
+         {% endfor %}    
+         
+         </div>
+       
+      </div>
+
+
+
+{% schema %}
+   { 
+   "name": "Top Bar Slider", 
+  "settings": [
+    {
+      "type": "color",
+      "id": "top_bar_bgcolor",
+      "label": "Background Color",
+      "default": "#f8f9fd"
+    },
+    {
+      "type": "range",
+      "id": "top_bar_section_padding_top",
+      "label": "Section Padding Top",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "default": 20,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "top_bar_section_padding_bottom",
+      "label": "Section Padding Bottom",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "default": 20,
+      "step": 1
+    },
+    {
+      "type": "color",
+      "id": "top_bar_slider_heading",
+      "label": "Heading Color",
+      "default": "#4d537a"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "top-bar",
+      "name": "Top Bar",
+      "limit": 12,  
+      "settings": [
+         {
+          "type": "text",
+          "id": "top_bar_slider_heading",
+          "label": "Heading",
+          "default":"✍️ YOUR PERSONALIZED MASTERPIECE"
+        },
+        {
+          "type": "textarea",
+          "id": "top_bar_slider_text",
+          "label": "Text",
+          "default": "Every sign crafted with unique artistry"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Top Bar"
+    }
+  ]
+}
+{% endschema %}

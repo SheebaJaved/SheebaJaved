@@ -1,0 +1,423 @@
+<style>
+  .nx-hero-btn-buy-white {
+    fill: #fff;
+    border-style: solid;
+    border-width: 2px 2px 2px 2px;
+    border-color: #fff;
+    border-radius: 5px;
+    padding: 13px 20px;
+    text-decoration: none;
+    font-size: 15px;
+    display: block;
+    transition: .5s;
+    cursor: pointer;
+    width: 100%;
+}
+ .nx-hero-btn-buy-white:hover, .nx-hero-btn-watch:hover {
+    transition: .5s;
+    transform: scale(1.1);
+}
+   .nx-hero-btn-watch {
+    fill: #fff;
+    color: #fff;
+    background-color: #0000;
+    border-style: solid;
+    border-width: 2px 2px 2px 2px;
+    border-color: #fff;
+    border-radius: 5px;
+    padding: 8px 20px;
+    text-decoration: none;
+    font-size: 15px;
+    display: block;
+    transition: .5s;
+    cursor: pointer;
+}
+  .nx-hero-wrap{
+  	min-height: 500px;
+    display: flex;
+
+  }
+  
+  .nx-hero-left-col{
+    background: url( {{ section.settings.nx_hero_leftimage | img_url: 'large' }} );
+    background-size: cover;
+        background-position: center center;
+    width: 50%;
+    height: auto;
+            padding:10px;
+  }
+  
+  .nx-hero-right-col{
+    background: url( {{ section.settings.nx_hero_rightimage | img_url: 'large' }} );
+    background-size: cover;  
+        background-position: center center;
+    width: 50%;
+    height: auto;
+    text-align: center;
+            padding:10px;
+
+  }
+  
+  .nx-hero-right-col h2{
+  	font-size: 42px;
+     {% assign nx_hero_headerLineHeight = section.settings.nx_hero_header_line_height | default: 24 %}
+    line-height: {{ nx_hero_headerLineHeight }}px;
+    
+  }
+  
+  .nx-hero-right-col p{
+    font-size: {{section.settings.nx_hero_descriptionsize }}px;
+    color:{{ section.settings.nx_hero_descriptioncolor }};
+     {% assign nx_list_descriptionLineHeight = section.settings.nx_hero_description_line_height | default: 24 %}
+    line-height: {{ nx_hero_descriptionLineHeight }}px;
+    
+  }
+  
+  .nx-hero-btn-section{
+  	display:flex;
+    max-width: 1140px;
+  }
+  
+  .nx-hero-btn-section .nx-hero-left-col, .nx-hero-btn-section .nx-hero-right-col{
+  	width:50%;
+    background:none;
+  }
+  
+  .nx-hero-btn-wrap{
+  	width: 100%;
+    padding: 10px;
+  }
+  
+  
+  
+  .nx-hero-showmobile{
+  	display:none!important;
+  }
+  
+  @media screen and (max-width:1024px){
+    .nx-hero-wrap{
+    	    flex-wrap: wrap;
+    flex-direction: column-reverse;
+      background: {{ section.settings.nx_hero_mobilebgcolor }};
+      flex-flow: column-reverse;
+      height: 100%;
+    }
+     .nx-hero-left-col{
+    	height: 500px;
+      	width:100%;
+    }
+    
+    .nx-hero-wrap .nx-hero-left-col{
+    	background-size: contain!important;
+    background-repeat: no-repeat;
+    }
+    
+    .nx-hero-right-col{
+    	width:100%;
+      background: transparent;
+    }
+    
+    .nx-hero-right-col h2{
+  	color: #000!important;
+    
+  }
+  
+  .nx-hero-right-col p{
+    font-size: calc({{section.settings.nx_hero_descriptionsize }}px - 20px);
+    color: #000;
+    
+  }
+    
+    .nx-hero-wrap .nx-hero-btn-section{
+    	display:none;
+    }
+    
+    .nx-hero-btn-section .nx-hero-left-col, .nx-hero-btn-section .nx-hero-right-col{
+    	height:100%;
+    }
+    .nx-hero-showmobile{
+    	display:flex!important;
+      background: {{ section.settings.nx_hero_mobilebgcolor }};
+      padding: 20px 0 40px 0;
+    }
+    .nx-hero-showmobile .nx-hero-btn-buy-white{
+      	fill: #000;
+    	background-color: #000;
+      	color: #fff;
+    }
+    
+    .nx-hero-showmobile .nx-hero-btn-watch{
+      	fill: #fff;
+    	background-color: #fff;
+      	color: #000;
+    }
+  }
+  
+  @media screen and (max-width:767px){
+    .nx-hero-showmobile{
+    	flex-flow: column;
+    }
+    
+    .nx-hero-showmobile .nx-hero-left-col, .nx-hero-showmobile .nx-hero-right-col{
+    	width: 100%!important;
+      padding: 0 10px;
+    }
+    
+    .nx-hero-left-col{
+    	height: 300px;
+      	width:100%;
+    }
+    
+  }
+  
+</style>
+
+<div class="nx-hero-wrap">
+  <div class="nx-hero-left-col">
+  	
+  </div>
+   <div class="nx-hero-right-col" style="display: flex;
+    align-items: stretch;
+    flex-direction: column;">
+     <div style="margin: auto;">
+     <h2 style="color: {{ section.settings.nx_hero_headercolor }}; font-size:{{ section.settings.nx_hero_headersize }}px;">
+       {{ section.settings.nx_hero_headertext }}</h2>
+     </div>
+     <div style="margin: auto;">
+       {{ section.settings.nx_hero_description }}
+     </div>
+
+     
+     
+     <div class="nx-hero-btn-section">
+      {% if section.settings.nx_hero_watchvideo == true and section.settings.nx_hero_buybutton == true %}
+       <div class="nx-hero-left-col">
+         <div class="nx-hero-btn-wrap">
+           <form class="product-form js-product-form2" action="/cart/add" data-productid="{{ section.settings.nx_hero_product-handle.id }}" method="post"> 
+  				<input type="hidden" name="id" data-productid="PRODUCT_ID" class="product-select" value="{{ section.settings.nx_hero_product-handle.variants[0].id }}">
+              	<input type="hidden" name="return_to" value="/checkout/" />
+		  		<input type="submit" value="BUY NOW {{ section.settings.nx_hero_product-handle.variants[0].price | money }}" class="nx-hero-btn-buy-white" style="color:{{ section.settings.nx_hero_btnfontcolor }}; background: {{ section.settings.nx_hero_btnbgcolor }}; border-color: {{ section.settings.nx_hero_btnbordercolor }}">
+		   </form>
+         </div>
+       </div>
+       <div class="nx-hero-right-col" >
+         <div class="nx-hero-btn-wrap">
+		     <a href="{{ section.settings.nx_hero_linkvideo }}" class="nx-hero-btn-watch" style="color:{{ section.settings.nx_hero_btnwatchfontcolor }}; background: {{ section.settings.nx_hero_btnwatchbgcolor }}; border-color: {{ section.settings.nx_hero_btnwatchbordercolor }}"> WATCH VIDEO </a>
+         </div>  
+       </div>
+      {% endif %}
+      {% if section.settings.nx_hero_watchvideo == false and section.settings.nx_hero_buybutton == true %} 
+      	<div class="nx-hero-btn-wrap">
+           <form class="product-form js-product-form3" action="/cart/add" data-productid="{{ section.settings.nx_hero_product-handle.id }}" method="post"> 
+  				<input type="hidden" name="id" data-productid="PRODUCT_ID" class="product-select" value="{{ section.settings.nx_hero_product-handle.variants[0].id }}">
+              	<input type="hidden" name="return_to" value="/checkout/" />
+		  		<input type="submit" value="BUY NOW {{ section.settings.nx_hero_product-handle.variants[0].price | money }}" class="nx-hero-btn-buy-white" style="color:{{ section.settings.nx_hero_btnfontcolor }}; background: {{ section.settings.nx_hero_btnbgcolor }}; border-color: {{ section.settings.nx_hero_btnbordercolor }}">
+		   </form>
+         </div>
+       {% endif %}
+       {% if section.settings.nx_hero_watchvideo == true and section.settings.nx_hero_buybutton == false %} 
+      	<div class="nx-hero-btn-wrap">
+           <a href="{{ section.settings.nx_hero_linkvideo }}" class="nx-hero-btn-watch" style="color:{{ section.settings.nx_hero_btnwatchfontcolor }}; background: {{ section.settings.nx_hero_btnwatchbgcolor }}; border-color: {{ section.settings.nx_hero_btnwatchbordercolor }}"> WATCH VIDEO </a>
+         </div>
+       {% endif %}
+     </div>
+     
+     
+     
+     
+  </div>
+</div>
+<div class="nx-hero-btn-section nx-hero-showmobile" style="margin: auto 0;">
+  {% if section.settings.nx_hero_watchvideo == true and section.settings.nx_hero_buybutton == true %}
+       <div class="nx-hero-left-col">
+         <div class="nx-hero-btn-wrap">
+           <form class="product-form" action="/cart/add" data-productid="{{ section.settings.nx_hero_product-handle.id }}" method="post"> 
+  				<input type="hidden" name="id" data-productid="PRODUCT_ID" class="product-select" value="{{ section.settings.product-handle.variants[0].id }}">
+              	<input type="hidden" name="return_to" value="/checkout/" />
+		  		<input type="submit" value="BUY NOW {{ section.settings.nx_hero_product-handle.variants[0].price | money }}" class="nx-hero-btn-buy-white" style="color:{{ section.settings.nx_hero_btnfontcolor }}; background: {{ section.settings.nx_hero_btnbgcolor }}; border-color: {{ section.settings.nx_hero_btnbordercolor }}">
+		   </form>
+         </div>
+       </div>
+       <div class="nx-hero-right-col" style="display:block">
+         <div class="nx-hero-btn-wrap">
+		     <a href="{{ section.settings.nx_hero_linkvideo }}" class="nx-hero-btn-watch" style="color:{{ section.settings.nx_hero_btnwatchfontcolor }}; background: {{ section.settings.nx_hero_btnwatchbgcolor }}; border-color: {{ section.settings.nx_hero_btnwatchbordercolor }}"> WATCH VIDEO </a>
+         </div>  
+       </div>
+      {% endif %}
+      {% if section.settings.nx_hero_watchvideo == false and section.settings.nx_hero_buybutton == true %} 
+      	<div class="nx-hero-btn-wrap">
+           <form class="product-form" action="/cart/add" data-productid="{{ section.settings.nx_hero_product-handle.id }}" method="post"> 
+  				<input type="hidden" name="id" data-productid="PRODUCT_ID" class="product-select" value="{{ section.settings.product-handle.variants[0].id }}">
+              	<input type="hidden" name="return_to" value="/checkout/" />
+		  		<input type="submit" value="BUY NOW {{ section.settings.nx_hero_product-handle.variants[0].price | money }}" class="nx-hero-btn-buy-white" style="color:{{ section.settings.nx_hero_btnfontcolor }}; background: {{ section.settings.nx_hero_btnbgcolor }}; border-color: {{ section.settings.nx_hero_btnbordercolor }}">
+		   </form>
+         </div>
+       {% endif %}
+       {% if section.settings.nx_hero_watchvideo == true and section.settings.nx_hero_buybutton == false %} 
+      	<div class="nx-hero-btn-wrap">
+           <a href="{{ section.settings.nx_hero_linkvideo }}" class="nx-hero-btn-watch" style="color:{{ section.settings.nx_hero_btnwatchfontcolor }}; background: {{ section.settings.nx_hero_btnwatchbgcolor }}; border-color: {{ section.settings.nx_hero_btnwatchbordercolor }}"> WATCH VIDEO </a>
+         </div>
+       {% endif %}     
+  
+  
+  <!--<div class="left-col">
+         <div class="btn-wrap">
+           <form class="product-form" action="/cart/add" data-productid="{{ section.settings.product-handle.id }}" method="post"> 
+  				<input type="hidden" name="id" data-productid="PRODUCT_ID" class="product-select" value="{{ section.settings.product-handle.variants[0].id }}">
+              	<input type="hidden" name="return_to" value="/checkout/" />
+		  		<input type="submit" value="BUY NOW {{ section.settings.product-handle.variants[0].price | money }}" class="btn-buy-white" style="color:{{ section.settings.btnfontcolor }}; background: {{ section.settings.btnbgcolor }}; border-color: {{ section.settings.btnbordercolor }}">
+		   </form>
+         </div>
+       </div>
+       <div class="right-col">
+         <div class="btn-wrap">
+		     <a href="#video" class="btn-watch" style="color:{{ section.settings.btnwatchfontcolor }}; background: {{ section.settings.btnwatchbgcolor }}; border-color: {{ section.settings.btnwatchbordercolor }}"> WATCH VIDEO </a>
+         </div>  
+       </div>-->
+     </div>
+
+{% schema %}
+  {
+    "name": "Hero Section",
+    "settings": [
+	{
+      "type": "image_picker",
+      "id": "nx_hero_leftimage",
+      "label": "Left image"
+    },
+	{
+      "type": "image_picker",
+      "id": "nx_hero_rightimage",
+      "label": "Right image"
+    },
+	{
+      "type": "text",
+      "id": "nx_hero_headertext",
+      "label": "Header"
+    },
+	{
+      "type": "color",
+      "id": "nx_hero_headercolor",
+      "label": "Header color"
+    },
+	 {
+      "type": "range",
+      "id": "nx_hero_headersize",
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Header Font Size",
+      "default": 42
+    },
+     {
+      "type": "range",
+      "id": "nx_hero_header_line_height",
+      "label": "Heading Line Height",
+      "unit": "px", 
+      "min": 10,
+      "max": 100,
+      "default": 24,
+      "step": 1
+    },
+	{
+      "type": "richtext",
+      "id": "nx_hero_description",
+      "label": "Description"
+    },
+	{
+      "type": "color",
+      "id": "nx_hero_descriptioncolor",
+      "label": "Description color"
+    },
+
+	{
+      "type": "range",
+      "id": "nx_hero_descriptionsize",
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Description Font Size",
+      "default": 25
+    },
+     {
+      "type": "range",
+      "id": "nx_hero_description_line_height",
+      "label": "Description Line Height",
+      "unit": "px", 
+      "min": 10,
+      "max": 100,
+      "default": 24,
+      "step": 1
+    },
+
+	{
+      "type": "product",
+      "id": "nx_hero_product-handle",
+      "label": "Product"
+    },
+	{
+      "type": "text",
+      "id": "nx_hero_linkvideo",
+      "label": "Link for Watch video button",
+	  "default": "#"
+    },
+	{
+      "type": "checkbox",
+      "id": "nx_hero_watchvideo",
+      "default": true,
+      "label": "Show Button Watch Video"
+    },
+	{
+      "type": "checkbox",
+      "id": "nx_hero_buybutton",
+      "default": true,
+      "label": "Show Buy Button "
+    },
+	{
+      "type": "color",
+      "id": "nx_hero_btnfontcolor",
+      "label": "Button Font Color"
+    },
+    {
+      "type": "color",
+      "id": "nx_hero_btnbordercolor",
+      "label": "Button Border Color"
+    },
+    {
+      "type": "color",
+      "id": "nx_hero_btnbgcolor",
+      "label": "Button Background Color"
+    },
+	{
+      "type": "color",
+      "id": "nx_hero_btnwatchfontcolor",
+      "label": "Button watch Font Color"
+    },
+    {
+      "type": "color",
+      "id": "nx_hero_btnwatchbordercolor",
+      "label": "Button watch Border Color"
+    },
+    {
+      "type": "color",
+      "id": "nx_hero_btnwatchbgcolor",
+      "label": "Button Background Color"
+    },
+	{
+      "type": "color",
+      "id": "nx_hero_mobilebgcolor",
+      "label": "Mobile Background Color"
+    }
+
+],
+"presets": [
+    {
+      "name": "Hero Section"
+    }
+  ]
+
+
+  }
+{% endschema %}

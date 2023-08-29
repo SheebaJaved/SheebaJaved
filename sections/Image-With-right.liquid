@@ -1,0 +1,354 @@
+<style>
+  .nx-btn-buy-black {
+    fill: #fff;
+    color: #000;
+    background-color: #fff;
+    border-style: solid;
+    border-width: 2px 2px 2px 2px;
+    border-color: #fff;
+    border-radius: 5px;
+    padding: 13px 20px;
+    text-decoration: none;
+    font-size: 15px;
+    display: block;
+    transition: .5s;
+    cursor: pointer;
+    width: 100%;
+}
+    .nx-btn-buy-black:hover {
+    transition: .5s;
+    transform: scale(1.1);
+}
+  
+  .nx-wrap-left-img{
+  	height: 100%;
+    display: flex;
+
+  }
+  
+  .nx-left-col-img-{{section.id}}{
+    background: url( {{ section.settings.nxleftimage | img_url: '480x480' }} );
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 50%;
+    height: auto;
+    padding:10px;
+    min-height: 500px;
+  }
+  
+  .nx-right-col-no-img-{{section.id}}{
+   
+    background-size: cover;    
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    padding:10px;
+    margin: auto 0;
+
+  }
+  .nx-right-col-no-img-{{ section.id }} h2 {
+    font-size: {{ section.settings.nxheadingsize }}px;
+    color: {{ section.settings.nxheadercolor }};
+     {% assign nxheaderLineHeight = section.settings.nxheader_line_height | default: 26 %}
+     line-height: {{ nxheaderLineHeight }}px;  
+    font-weight: {{ section.settings.nxheading_font_weight }};
+    padding: {{ section.settings.nxheader_padding_top }}px {{ section.settings.nxheader_padding_right }}px {{ section.settings.nxheader_padding_bottom }}px {{ section.settings.nxheader_padding_left }}px;
+  }
+  
+ .nx-right-col-no-img-{{ section.id }} .nxdescription{
+     font-size: {{ section.settings.nxdescriptionsize }}px;
+    color:{{ section.settings.nxdescriptioncolor }};
+     {% assign nxdescriptionLineHeight = section.settings.nxdescription_line_height | default: 26 %}
+     line-height: {{ nxdescriptionLineHeight }}px;  
+    font-weight: {{ section.settings.nxdescription_font_weight }};
+    padding: {{ section.settings.nxdescription_padding_top }}px {{ section.settings.nxdescription_padding_right }}px {{ section.settings.nxdescription_padding_bottom }}px {{ section.settings.nxdescription_padding_left }}px;
+  }
+  .nx-btn-section{
+  	display:flex;
+    max-width: 1140px;
+  }
+  
+  .nx-btn-section .nx-left-col, .nx-btn-section .nx-right-col{
+  	width:50%;
+    background:none;
+  }
+  
+  .nx-btn-wrap{
+  	width: 100%;
+    padding: 10px;
+  }
+  
+  
+  
+  @media screen and (max-width:767px){
+    .nx-wrap-left-img{
+    	flex-flow: column;
+    }
+    
+    .nx-wrap-left-img .nx-left-col-img-{{section.id}}{
+      	height: 450px;
+      	width:100%;
+      min-height: auto;
+    }
+    .nx-wrap-left-img .nx-right-col-no-img-{{section.id}}{
+    	width:100%;
+    }
+    .nx-left-col-img-{{section.id}}{
+    	background-position:center;
+      	background-size: contain;
+      	background-repeat: no-repeat;
+    }
+  }
+  
+  @media screen and (min-width: 500px){
+    .nx-left-col-img-{{section.id}}{
+    	background-size: contain;
+    }
+  }
+</style>
+
+<div class="nx-wrap-left-img">
+  <div class="nx-left-col-img-{{section.id}}">
+  	
+  </div>
+  <div class="nx-right-col-no-img-{{section.id}}">
+     <h2 style="color: {{ section.settings.nxheadercolor }}; font-size: {{ section.settings.nxheadingsize }}px">{{ section.settings.nxheadertext }}</h2>
+    <div class="nxdescription"> {{ section.settings.nxdescription }}</div>
+    {% if section.settings.buybutton == true %}
+     <div class="nx-btn-section">
+       
+         <div class="nx-btn-wrap">
+           
+          
+           <form class="product-form js-product-form7" action="/cart/add" data-productid="{{ section.settings.product-handle.id }}" method="post"> 
+  				<input type="hidden" name="id" data-productid="PRODUCT_ID" class="product-select" value="{{ section.settings.product-handle.variants[0].id }}">
+              	<input type="hidden" name="return_to" value="/checkout/" />
+		  		<input type="submit" value="BUY NOW" class="nx-btn-buy-black" style="color:{{ section.settings.btnfontcolor }}; background: {{ section.settings.btnbgcolor }}; border-color: {{ section.settings.btnbordercolor }}">
+		   </form>
+         </div>
+       
+       
+     </div>
+    {% endif%}
+     
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Left Image Right text",
+    "settings": [
+	{
+      "type": "image_picker",
+      "id": "nxleftimage",
+      "label": "Left image"
+    },
+    {
+      "type": "text",
+      "id": "nxheadertext",
+      "label": "Header",
+      "default": "Save up to $500 per Month on Subscriptions"
+    },
+    {
+      "type": "color",
+      "id": "nxheadercolor",
+      "label": "Header color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "nxheader_line_height",
+      "label": "Header Line Height",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "default": 26,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "nxheadingsize",
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Heading Font Size",
+      "default": 25
+    },
+    {
+      "type": "select",
+      "id": "nxheading_font_weight",
+      "label": "Font Weight",
+      "options": [
+        { "value": "normal", "label": "Normal" },
+        { "value": "bold", "label": "Bold" },
+        { "value": "bolder", "label": "Bolder" },
+        { "value": "lighter", "label": "Lighter" }
+      ],
+      "default": "bold"
+    },
+    {
+      "type": "range",
+      "id": "nxheader_padding_top",
+      "label": "Heading Padding Top",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "default": 10,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "nxheader_padding_bottom",
+      "label": "Heading Padding Bottom",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "default": 5,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "nxheader_padding_right",
+      "label": "Heading Padding Right",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "default": 0,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "nxheader_padding_left",
+      "label": "Heading Padding Left",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "default": 0,
+      "step": 1
+    },
+    {
+      "type": "textarea",
+      "id": "nxdescription",
+      "label": "Description",
+      "default": "This is a one-time purchase. There are no hidden fees, paid add-ons or upgrades. What you see is what you get, with all the premium features for free. Save hundreds of dollars on paid apps and add-ons. Set up your single-product store with premium add-ons in just a few clicks, and start selling like nobody's business."
+    },
+	{
+      "type": "color",
+      "id": "nxdescriptioncolor",
+      "label": "Description color",
+      "default": "#000000"
+    },
+	{
+      "type": "range",
+      "id": "nxdescriptionsize",
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Description Font Size",
+      "default": 19
+    },
+    {
+      "type": "range",
+      "id": "nxdescription_line_height",
+      "label": "Description Line Height",
+      "unit": "px", 
+      "min": 0,
+      "max": 40,
+      "default": 24,
+      "step": 1
+    },
+    {
+      "type": "select",
+      "id": "nxdescription_font_weight",
+      "label": "Description Font Weight",
+      "options": [
+        { "value": "normal", "label": "Normal" },
+        { "value": "bold", "label": "Bold" },
+        { "value": "bolder", "label": "Bolder" },
+        { "value": "lighter", "label": "Lighter" }
+      ],
+      "default": "normal"
+    },
+    {
+      "type": "range",
+      "id": "nxdescription_padding_top",
+      "label": "Description Padding Top",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "default": 5,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "nxdescription_padding_bottom",
+      "label": "Description Padding Bottom",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "default": 10,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "nxdescription_padding_right",
+      "label": "Description Padding Right",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "default": 0,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "nxdescription_padding_left",
+      "label": "Description Padding Left",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "default": 0,
+      "step": 1
+    }
+    ,
+    {
+      "type": "product",
+      "id": "product-handle",
+      "label": "Product"
+    },
+    {
+      "type": "checkbox",
+      "id": "buybutton",
+      "default": true,
+      "label": "Show Buy Button"
+    },
+    {
+      "type": "color",
+      "id": "btnfontcolor",
+      "label": "Button Font Color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "btnbordercolor",
+      "label": "Button Border Color",
+      "default": "#334FB4"
+    },
+    {
+      "type": "color",
+      "id": "btnbgcolor",
+      "label": "Button Background Color",
+      "default": "#334FB4"
+    }
+],
+"presets": [
+    {
+      "name": "Left Image Right text"
+    }
+  ]
+
+
+  }
+{% endschema %}

@@ -1,0 +1,310 @@
+<style>
+  .nx-list-btn-buy-white, .nx-list-btn-watch  {
+    fill: #fff;
+   border-style: solid;
+    border-width: 2px 2px 2px 2px;
+    border-color: #fff;
+    border-radius: 5px;
+    padding: 13px 20px;
+    text-decoration: none;
+    font-size: 15px;
+    display: block;
+    transition: .5s;
+    cursor: pointer;
+    width: 100%;
+}
+ 
+    .nx-list-btn-buy-white:hover , .nx-list-btn-watch:hover {
+    transition: .5s;
+    transform: scale(1.1);
+}
+  .nx-list-wrap-list-{{ section.id }}{
+    background: url( {{ section.settings.nx_list_bgimagedesktop | img_url: 'large' }} );
+    background-size: cover; 
+    background-position: center;
+    text-align: center;
+    padding: 30px 0;
+    }
+  
+  .nx-list-container-list{
+  	max-width: 1140px;
+    margin: 0 auto;
+  }
+  .nx-list-wrap-list h2{
+  	font-size: 42px;
+  }
+  
+  @media screen and (max-width:767px){
+    .nx-list-btn-section .nx-left-col{
+    	width:100%;
+    }
+    .nx-list-btn-section .right-col{
+    	display:none;
+    }
+    .nx-list-wrap-list-{{ section.id }}{
+    	background: url( {{ section.settings.nx_list_bgimagemobile | img_url: 'large' }} );
+      	background-size: cover;
+    	background-position: center;
+    }
+  }
+</style>
+<div class="nx-list-wrap-list-{{ section.id }}">
+  <div class="nx-list-container-list">
+  <div>
+  <h2 style="color: {{section.settings.nx_list_headercolor }}; font-size: {{ section.settings.nx_list_headersize }}px; margin: 0">{{ section.settings.nx_list_headertext }}</h2>
+  </div>
+  {%- for block in section.blocks -%}
+    {%- case block.type -%}
+ 		{% when 'richtext' %}
+  			<style>
+              .p-color-{{ block.id }} p {
+                  color: {{ block.settings.nx_list_paragraphcolor }} !important;
+                  font-size: {{ section.settings.nx_list_descriptionsize }}px;
+                {% assign nx_list_descriptionLineHeight = section.settings.nx_list_description_line_height | default: 18 %}
+                  line-height: {{ nx_list_descriptionLineHeight }}px;
+                }
+ 			</style>
+ 			 <div class="p-color-{{block.id}}">
+    			<p> {{ block.settings.nx_list_paragraph }}</p>
+  
+  			 </div>
+		{% when 'text' %}
+    <style>
+      .nx-point{
+      	display:flex;
+        justify-content: center;
+      }
+      
+      .nx-list-point i{
+      	    width: 1.25em;
+        padding-top: 2.5%;
+        
+      }
+      
+      .nx-list-point p{
+      	padding-left: 5px;
+        
+      }
+      .nx-list-point-{{block.id}} i, .point-{{block.id}} p{
+        color: {{ block.settings.nx_list_pointcolor }}!important;
+        margin: 0;
+        line-height: {{ list_descriptionLineHeight }}px;
+      }
+    </style>
+    <div class="nx-list-point-{{block.id}}">
+    		<!--<i aria-hidden="true" class="fas fa-check" style="font-size: {{ section.settings.nx_list_pointsize }}px"></i>-->      
+      <p style="font-size: {{ section.settings.nx_list_pointsize }}px"><i aria-hidden="true" class="fas fa-check"></i>{{ block.settings.nx_list_point}}</p>
+    </div>
+  	{%- endcase -%}
+  {%- endfor -%}
+    
+    <div class="nx-list-btn-section">
+      {% if section.settings.nx_list_watchvideo == true and section.settings.nx_list_buybutton == true %}
+       <div class="nx-list-left-col">
+         <div class="nx-list-btn-wrap">
+           <form class="product-form js-product-form8" action="/cart/add" data-productid="{{ section.settings.nx_list_product-handle.id }}" method="post"> 
+  				<input type="hidden" name="id" data-productid="PRODUCT_ID" class="nx-list-product-select" value="{{ section.settings.nx_list_product-handle.variants[0].id }}">
+              	<input type="hidden" name="return_to" value="/checkout/" />
+		  		<input type="submit" value="BUY NOW {{ section.settings.nx_list_product-handle.variants[0].price | money }}" class="nx-list-btn-buy-white" style="color:{{ section.settings.nx_list_btnfontcolor }}; background: {{ section.settings.nx_list_btnbgcolor }}; border-color: {{ section.settings.nx_list_btnbordercolor }}">
+		   </form>
+         </div>
+       </div>
+       <div class="nx-list-right-col">
+         <div class="nx-list-btn-wrap">
+		     <a href="{{ section.settings.nx_list_linkvideo }}" class="nx-list-btn-watch" style="color:{{ section.settings.nx_list_btnwatchfontcolor }}; background: {{ section.settings.nx_list_btnwatchbgcolor }}; border-color: {{ section.settings.nx_list_btnwatchbordercolor }}"> WATCH VIDEO </a>
+         </div>  
+       </div>
+      {% endif %}
+      {% if section.settings.nx_list_watchvideo == false and section.settings.nx_list_buybutton == true %} 
+      	<div class="nx-list-btn-wrap ">
+           <form class="product-form js-product-form9" action="/cart/add" data-productid="{{ section.settings.nx_list_product-handle.id }}" method="post"> 
+  				<input type="hidden" name="id" data-productid="PRODUCT_ID" class="nx-list-product-select" value="{{ section.settings.nx_list_product-handle.variants[0].id }}">
+              	<input type="hidden" name="return_to" value="/checkout/" />
+		  		<input type="submit" value="BUY NOW  {{ section.settings.nx_list_product-handle.variants[0].price | money }}" class="nx-list-btn-buy-white" style="color:{{ section.settings.nx_list_btnfontcolor }}; background: {{ section.settings.nx_list_btnbgcolor }}; border-color: {{ section.settings.nx_list_btnbordercolor }}">
+		   </form>
+         </div>
+       {% endif %}
+       {% if section.settings.nx_list_watchvideo == true and section.settings.nx_list_buybutton == false %} 
+      	<div class="nx-list-btn-wrap">
+           <a href="{{ section.settings.nx_list_linkvideo }}" class="nx-list-btn-watch" style="color:{{ section.settings.nx_list_btnwatchfontcolor }}; background: {{ section.settings.nx_list_btnwatchbgcolor }}; border-color: {{ section.settings.nx_list_btnwatchbordercolor }}"> WATCH VIDEO </a>
+         </div>
+       {% endif %}
+     </div>
+    
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Custom List Section",
+    "settings": [
+	{
+      "type": "image_picker",
+      "id": "nx_list_bgimagedesktop",
+      "label": "Background Image Desktop"
+    },
+	{
+      "type": "image_picker",
+      "id": "nx_list_bgimagemobile",
+      "label": "Background Image Mobile"
+    },
+	
+	{
+      "type": "text",
+      "id": "nx_list_headertext",
+      "label": "Header"
+    },
+	{
+      "type": "color",
+      "id": "nx_list_headercolor",
+      "label": "Header color"
+    },
+{
+      "type": "range",
+      "id": "nx_list_headersize",
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Heading Font Size",
+      "default": 25
+    },
+	{
+      "type": "range",
+      "id": "nx_list_descriptionsize",
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Text Font Size",
+      "default": 25
+    },
+     {
+      "type": "range",
+      "id": "nx_list_description_line_height",
+      "label": "Description Line Height",
+      "unit": "px", 
+      "min": 10,
+      "max": 100,
+      "default": 18,
+      "step": 1
+    },  
+	{
+      "type": "range",
+      "id": "nx_list_pointsize",
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "List Font Size",
+      "default": 25
+    },
+	{
+      "type": "text",
+      "id": "nx_list_linkvideo",
+      "label": "Link for Watch video button",
+	  "default": "#"
+    },
+	{
+      "type": "checkbox",
+      "id": "nx_list_watchvideo",
+      "default": true,
+      "label": "Show Button Watch Video"
+    },
+	{
+      "type": "checkbox",
+      "id": "nx_list_buybutton",
+      "default": true,
+      "label": "Show Buy Button "
+    },
+
+	{
+      "type": "product",
+      "id": "nx_list_product-handle",
+      "label": "Product"
+    },
+	{
+      "type": "color",
+      "id": "nx_list_btnfontcolor",
+      "label": "Button Font Color"
+    },
+    {
+      "type": "color",
+      "id": "nx_list_btnbordercolor",
+      "label": "Button Border Color"
+    },
+    {
+      "type": "color",
+      "id": "nx_list_btnbgcolor",
+      "label": "Button Background Color"
+    },
+	{
+      "type": "color",
+      "id": "nx_list_btnwatchfontcolor",
+      "label": "Button watch Font Color"
+    },
+    {
+      "type": "color",
+      "id": "nx_list_btnwatchbordercolor",
+      "label": "Button watch Border Color"
+    },
+    {
+      "type": "color",
+      "id": "nx_list_btnwatchbgcolor",
+      "label": "Button Background Color"
+    }
+	
+
+],
+
+"blocks":[
+	{
+      "type": "richtext",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "nx_list_paragraph",
+		  "default": "<p>Text here</p>",
+          "label": "Text"
+        },
+		{
+			"type": "color",
+          "id": "nx_list_paragraphcolor",
+          "label": "Text color"
+		}
+		
+
+	]
+	},
+	
+	{
+      "type": "text",
+      "name": "Point",
+      "settings": [
+        {
+          "type": "text",
+          "id": "nx_list_point",
+          "label": "Point text"
+        },
+		{
+			"type": "color",
+          "id": "nx_list_pointcolor",
+          "label": "Point color"
+		}
+
+	]
+	}
+	
+
+],
+
+"presets": [
+    {
+      "name": "Custom List Section"
+    }
+  ]
+
+
+  }
+{% endschema %}

@@ -1,0 +1,387 @@
+<style>
+   body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  .clients {
+    text-align: {{ section.settings.clients_section_text_align }};
+    background:{{ section.settings.clients_section_background_color }};
+    padding-top:{{ section.settings.clients_section_padding_top }}px;
+    padding-bottom:{{ section.settings.clients_section_padding_bottom }}px;
+    padding-right:{{ section.settings.clients_section_padding_right }}px;
+    padding-left:{{ section.settings.clients_section_padding_left }}px;
+  }
+  .clients h1{
+    padding-top: {{ section.settings.client_heading_padding_top }}px;
+    padding-bottom: {{ section.settings.client_heading_padding_bottom }}px;
+    color:{{ section.settings.client_heading_color }};
+    font-weight: {{ section.settings.client_heading_font_weight }};
+    font-size: {{ section.settings.client_heading_font_size }}px;
+  }
+   .clients p {
+    color: {{ section.settings.client_text_color }};
+    font-size: {{ section.settings.client_text_font_size }}px;
+    font-weight: {{ section.settings.client_text_font_weight }};
+    margin-top:{{ section.settings.client_text_margin_top }}px;
+    margin-bottom:{{ section.settings.client_text_margin_bottom }}px;
+    margin-right:{{ section.settings.client_text_margin_right }}px;
+    margin-left:{{ section.settings.client_text_margin_left }}px;
+   }
+  .clients .small-container {
+     max-width: {{ section.settings.client_max_width }};
+     margin: auto;
+     display: {{ section.settings.client_container_display }};
+  }
+  .clients .row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: {{ section.settings.column_gap }}px;
+  }
+  .clients .col-5{
+    margin-top:{{ section.settings.client_box_margin_top }}px;
+    margin-bottom:{{ section.settings.client_box_margin_bottom }}px;
+    margin-right:{{ section.settings.client_box_margin_right }}px;
+    margin-left:{{ section.settings.client_box_margin_left }}px;
+  }
+  .clients .col-5 img {
+   width: {{ section.settings.clients_img_width }}%;
+   filter: grayscale({{ section.settings.clients_img_filter_intensity }}%);
+  }
+  .clients .col-5 img:hover {
+   filter: grayscale({{ section.settings.clients_img_hover_filter_intensity }}%);
+  }
+
+  /* Responsive Styles */
+  @media screen and (max-width: 768px) {
+    .clients {
+      margin: 30px auto;
+    }
+  }
+</style>
+
+<div class="clients">
+  <h1 class="heading">{{ section.settings.client_heading }}</h1>
+  <p>{{ section.settings.client_text }}</p>
+  <div class="small-container">
+    <div class="row">
+       {% for block in section.blocks %}
+      <div class="col-5">
+        <a href="{{ block.settings.client_logo_link_url }}">
+         <img src="{{ block.settings.client_logo_image | img_url: 'master' }}" alt=""></a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  </div>
+
+
+    {% schema %}
+  {
+  "name": "Custom Client Logo",
+  "settings": [
+  {
+    "type": "color",
+    "id": "clients_section_background_color",
+    "label": "Background Color",
+    "default": "#fff"
+  },
+  {
+    "type": "range",
+    "id": "clients_section_padding_top",
+    "label": "Section Padding Top",
+    "unit": "px",
+    "min": 0,
+    "max": 100,
+    "default": 50,
+    "step": 1
+  },
+  {
+    "type": "range",
+    "id": "clients_section_padding_bottom",
+    "label": "Section Padding Bottom",
+    "unit": "px",
+    "min": 0,
+    "max": 100,
+    "default": 15,
+    "step": 1
+  },
+  {
+    "type": "range",
+    "id": "clients_section_padding_right",
+    "label": "Section Padding Right",
+    "unit": "px",
+    "min": 0,
+    "max": 100,
+    "default": 10,
+    "step": 1
+  },
+  {
+    "type": "range",
+    "id": "clients_section_padding_left",
+    "label": "Section Padding Left",
+    "unit": "px",
+    "min": 0,
+    "max": 100,
+    "default": 10,
+    "step": 1
+  },  
+  {
+  "type": "select",
+  "id": "clients_section_text_align",
+  "label": "Text Alignment",
+  "default": "center",
+  "options": [
+    { "value": "left", "label": "Left" },
+    { "value": "center", "label": "Center" },
+    { "value": "right", "label": "Right" },
+    { "value": "justify", "label": "Justify" }
+  ]
+  },
+   {
+    "type": "textarea",
+    "id": "client_heading",
+    "label": "Clients Heading",
+    "default":"Our Clients"
+  },
+  {
+    "type": "color",
+    "id": "client_heading_color",
+    "label": "Heading Color",
+    "default": "#000"
+  },
+  {
+    "type": "range",
+    "id": "client_heading_padding_top",
+    "label": "Heading Padding Top",
+    "unit": "px",
+    "min": 0,
+    "max": 50,
+    "default": 15,
+    "step": 1
+  },
+  {
+  "type": "range",
+  "id": "client_heading_padding_bottom",
+  "label": "Heading Padding Bottom",
+  "unit": "px",
+  "min": 0,
+  "max": 50,
+  "default": 15,
+  "step": 1
+  },  
+  {
+  "type": "range",
+  "id": "client_heading_font_size",
+  "label": "Heading Font Size",
+  "unit":"px",
+  "min": 20,
+  "max": 60,
+  "default": 30,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "client_heading_font_weight",
+  "label": "Heading Font Weight",
+  "unit": "nrm",
+  "min": 100,
+  "max": 900,
+  "default": 500,
+  "step": 100
+  },
+   {
+    "type": "textarea",
+    "id": "client_text",
+    "label": "Clients text",
+    "default":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam blanditiis, voluptatem tempora eum nemo natus laboriosam debitis doloremque explicabo ullam."
+  },
+  {
+    "type": "color",
+    "id": "client_text_color",
+    "label": "Text Color",
+    "default": "#000"
+  },  
+  {
+  "type": "range",
+  "id": "client_text_font_size",
+  "label": "Text Font Size",
+  "unit":"px",
+  "min": 0,
+  "max": 60,
+  "default": 14,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "client_text_font_weight",
+  "label": "Text Font Weight",
+  "unit": "nrm",
+  "min": 100,
+  "max": 900,
+  "default": 100,
+  "step": 100
+  },
+  {
+  "type": "range",
+  "id": "client_text_margin_top",
+  "label": "Text Margin Top",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 10,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "client_text_margin_bottom",
+  "label": "Text Margin Bottom",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 10,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "client_text_margin_left",
+  "label": "Text Margin Left",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 30,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "client_text_margin_right",
+  "label": "Text Margin Right",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 30,
+  "step": 1
+ },
+ {
+  "type": "select",
+  "id": "client_max_width",
+  "label": "Max Width",
+  "default": "1200px",
+  "options": [
+    { "value": "100px", "label": "100px" },
+    { "value": "500px", "label": "500px" },
+    { "value": "800px", "label": "800px" },
+    { "value": "1000px", "label": "1000px" },
+    { "value": "1080px", "label": "1080px" },
+    { "value": "1200px", "label": "1200px" },
+    { "value": "1600px", "label": "1600px" },
+    { "value": "1800px", "label": "1800px" }
+  ]
+ },   
+ {
+  "type": "range",
+  "id": "column_gap",
+  "label": "Column Gap",
+  "unit": "px",
+  "min": 0,
+  "max": 20,
+  "default": 6,
+  "step": 1
+  },  
+  {
+  "type": "range",
+  "id": "client_box_margin_top",
+  "label": "Box Margin Top",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 0,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "client_box_margin_bottom",
+  "label": "Box Margin Bottom",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 0,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "client_box_margin_right",
+  "label": "Box Margin Right",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 0,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "client_box_margin_left",
+  "label": "Box Margin Left",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 0,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "clients_img_width",
+  "label": "Image Width",
+  "unit": "%",
+  "min": 0,
+  "max": 100,
+  "default": 100,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "clients_img_filter_intensity",
+  "label": "Image Filter Intensity",
+  "min": 0,
+  "max": 100,
+  "default": 0,
+  "unit": "%"
+  },
+  {
+  "type": "range",
+  "id": "clients_img_hover_filter_intensity",
+  "label": "Image Hover Filter Intensity",
+  "min": 0,
+  "max": 100,
+  "default": 40,
+  "unit": "%"
+  }  
+  ],
+  "blocks": [
+  {
+  "type": "image-box",
+  "name": "Image Box",
+  "limit": 50,
+  "settings": [
+   {
+  "type": "url",
+  "id": "client_logo_link_url",
+  "label": "Link URL Image "
+  },
+  {
+    "type": "image_picker",
+    "id": "client_logo_image",
+    "label": "Client Logo"
+  }
+   ]
+   }
+  ],
+  "presets": [
+  {
+  "name": "Custom Client Logo",
+  "category": "Custom"
+  }
+ ]
+}
+
+{% endschema %}

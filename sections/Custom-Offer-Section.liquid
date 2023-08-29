@@ -1,0 +1,631 @@
+ <style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .row-offer {
+    display: {{ section.settings.offer_section_display }};
+    text-align: {{ section.settings.offer_section_text_align }};
+    flex-wrap: wrap;
+    justify-content: {{ section.settings.offer_section_justify_content }};
+    background: radial-gradient(
+    circle,
+    {{ section.settings.radial_gradient_center }},
+    {{ section.settings.radial_gradient_outer }}
+  ), linear-gradient(to right, 
+    {{ section.settings.background_gradient_start }},
+    {{ section.settings.background_gradient_end }} );
+    padding: {{ section.settings.offer_section_padding_top }}px {{ section.settings.offer_section_padding_right }}px {{ section.settings.offer_section_padding_bottom }}px {{ section.settings.offer_section_padding_left }}px;
+  }
+  .offer_small-container {
+    max-width: {{ section.settings.offer_container_max_width }};
+    margin: auto;
+ }
+
+
+  .col-2-offer {
+    text-align: {{ section.settings.offer_text_align }};
+  }
+
+  .col-2-offer p {
+    padding: {{ section.settings.offer_text_padding_top }}px {{ section.settings.offer_text_padding_right }}px {{ section.settings.offer_text_padding_bottom }}px {{ section.settings.offer_text_padding_left }}px;
+    font-size: {{ section.settings.offer_text_font_size }}px;
+    color: {{ section.settings.offer_text_color }};
+  }
+
+  .col-2-offer img {
+    max-width: {{ section.settings.offer_img_max_width }}%;
+    padding: {{ section.settings.offer_img_padding_top }}px {{ section.settings.offer_img_padding_right }}px {{ section.settings.offer_img_padding_bottom }}px {{ section.settings.offer_img_padding_left }}px;
+  }
+
+  .col-2-offer h1 {
+    padding: {{ section.settings.offer_heading_padding_top }}px {{ section.settings.offer_heading_padding_right }}px {{ section.settings.offer_heading_padding_bottom }}px {{ section.settings.offer_heading_padding_left }}px;
+    font-size: {{ section.settings.offer_heading_font_size }}px !important;
+    margin: {{ section.settings.offer_heading_margin_top }}px
+            {{ section.settings.offer_heading_margin_right }}px
+            {{ section.settings.offer_heading_margin_bottom }}px
+            {{ section.settings.offer_heading_margin_left }}px !important;
+    color: {{ section.settings.offer_heading_color }};
+  }
+
+  .btn-offer {
+    display: {{ section.settings.offer_button_display }};
+    background-color: {{ section.settings.offer_button_background_color }};
+    color: {{ section.settings.offer_button_color }};
+    font-size: {{ section.settings.offer_button_font_size }}px;
+    padding: {{ section.settings.offer_button_padding_top }}px {{ section.settings.offer_button_padding_right }}px {{ section.settings.offer_button_padding_bottom }}px {{ section.settings.offer_button_padding_left }}px !important;
+    margin: {{ section.settings.offer_button_margin_top }}px {{ section.settings.offer_button_margin_right }}px {{ section.settings.offer_button_margin_bottom }}px {{ section.settings.offer_button_margin_left }}px !important;
+    border-radius:  {{ section.settings.offer_button_border_radius }}px;
+    transition: background 0.5s;
+    text-decoration: none;
+  }
+
+  .btn-offer:hover {
+    background: {{ section.settings.offer_button_hover_background_color }};
+    color: {{ section.settings.offer_button_hover_color }};
+  }
+
+  @media screen and (min-width: 768px) {
+    .col-2-offer {
+      flex-basis: 45%;
+    }
+
+    .col-2-offer h1 {
+      font-size: 2rem;
+      line-height: 2.5rem;
+      margin: 25px 0;
+    }
+
+    .btn-offer {
+      padding: 8px 30px;
+      margin: 30px 0;
+    }
+  }
+</style>
+<div class="offer">
+  <div class="offer_small-container">
+  <div class="row-offer">
+    <div class="col-2-offer">
+      <a href="{{ section.settings.offer_link_url }}">
+        <img src="{{ section.settings.offer_img | img_url: 'master' }}" class="offer-img">
+      </a>
+    </div>
+    <div class="col-2-offer">
+      <p>{{ section.settings.offer_text }}</p>
+      <h1>{{ section.settings.offer_heading }}</h1>
+      <small>{{ section.settings.offer_content }}</small>
+      <br>
+      <a href="{{ section.settings.offer_button_link_url }}" class="btn-offer">{{ section.settings.offer_button }} &#10140;</a>
+    </div>
+  </div>
+</div>
+</div>  
+  
+  {% schema %}
+  {
+  "name": "Custom Offer Section",
+  "settings": [
+     {
+    "type": "color",
+    "id": "radial_gradient_center",
+    "label": "Radial Gradient Center Color",
+    "default": "#fff"
+  },
+  {
+    "type": "color",
+    "id": "radial_gradient_outer",
+    "label": "Radial Gradient Outer Color",
+    "default": "#ffd6d6"
+  },
+  {
+    "type": "color",
+    "id": "background_gradient_start",
+    "label": "Linear Gradient Start Color",
+    "default": "#ff0000"
+  },
+  {
+    "type": "color",
+    "id": "background_gradient_end",
+    "label": "Linear Gradient End Color",
+    "default": "#00ff00"
+ },
+ {
+  "type": "select",
+  "id": "offer_container_max_width",
+  "label": "Max Width",
+  "default": "1080px",
+  "options": [
+    { "value": "100px", "label": "100px" },
+    { "value": "500px", "label": "500px" },
+    { "value": "800px", "label": "800px" },
+    { "value": "1000px", "label": "1000px" },
+    { "value": "1080px", "label": "1080px" },
+    { "value": "1200px", "label": "1200px" },
+    { "value": "1600px", "label": "1600px" },
+    { "value": "1800px", "label": "1800px" }
+  ]
+ },   
+ {
+  "type": "select",
+  "id": "offer_section_display",
+  "label": "Offer Section Display",
+  "default": "flex",
+  "options": [
+    { "value": "block", "label": "Block" },
+    { "value": "inline-block", "label": "Inline Block" },
+    { "value": "flex", "label": "Flex" },
+    { "value": "inherit", "label": "Inherit" },
+    { "value": "inline-flex", "label": "Inline Flex" },
+    { "value": "grid", "label": "Grid" }
+  ]
+  }, 
+  {
+  "type": "select",
+  "id": "offer_section_justify_content",
+  "label": "Justify Content",
+  "default": "space-around",
+  "options": [
+    {
+      "value": "flex-start",
+      "label": "Start"
+    },
+    {
+      "value": "flex-end",
+      "label": "End"
+    },
+    {
+      "value": "center",
+      "label": "Center"
+    },
+    {
+      "value": "space-between",
+      "label": "Space Between"
+    },
+    {
+      "value": "space-around",
+      "label": "Space Around"
+    }
+  ]
+  },  
+  {
+  "type": "range",
+  "id": "offer_section_padding_top",
+  "label": "Section Padding Top",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 30,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "offer_section_padding_bottom",
+  "label": "Section Padding Bottom",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 30,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "offer_section_padding_right",
+  "label": "Section Padding Right",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 10,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "offer_section_padding_left",
+  "label": "Section Padding Left",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 10,
+  "step": 1
+  },
+  {
+  "type": "select",
+  "id": "offer_text_align",
+  "label": "Text Alignment",
+  "default": "center",
+  "options": [
+    { "value": "left", "label": "Left" },
+    { "value": "center", "label": "Center" },
+    { "value": "right", "label": "Right" },
+    { "value": "justify", "label": "Justify" }
+  ]
+  },  
+  {
+  "type": "url",
+  "id": "offer_link_url",
+  "label": "Link URL Image "
+  },
+  {
+  "type": "image_picker",
+  "id": "offer_img",
+  "label": "Offer Image"
+  },
+  {
+  "type": "range",
+  "id": "offer_img_max_width",
+  "label": "Image Max Width",
+  "unit": "%",
+  "min": 0,
+  "max": 100,
+  "default": 100,
+  "step": 1
+  },  
+  {
+  "type": "range",
+  "id": "offer_img_padding_top",
+  "label": "Img Padding Top",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 30,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "offer_img_padding_bottom",
+  "label": "Img Padding Bottom",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 30,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "offer_img_padding_right",
+  "label": "Img Padding Right",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 0,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "offer_img_padding_left",
+  "label": "Img Padding Left",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 0,
+  "step": 1
+  },
+  {
+  "type": "textarea",
+  "id": "offer_text",
+  "label": "Offer Text",
+  "default":"Exclusively Available on RedStore"
+  },
+  {
+  "type": "color",
+  "id": "offer_text_color",
+  "label": "Text Color",
+  "default": "#000"
+  },
+  {
+  "type": "range",
+  "id": "offer_text_padding_top",
+  "label": "Text Padding Top",
+  "unit": "px",
+  "min": 0,
+  "max": 50,
+  "default": 0,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "offer_text_padding_bottom",
+  "label": "Text Padding Bottom",
+  "unit": "px",
+  "min": 0,
+  "max": 50,
+  "default": 0,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "offer_text_padding_right",
+  "label": "Text Padding Right",
+  "unit": "px",
+  "min": 0,
+  "max": 50,
+  "default": 0,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "offer_text_padding_left",
+  "label": "Text Padding Left",
+  "unit": "px",
+  "min": 0,
+  "max": 50,
+  "default": 0,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "offer_text_font_size",
+  "label": "Text Font Size",
+  "unit": "px",
+  "min": 0,
+  "max": 80,
+  "default": 12,
+  "step": 1
+  },  
+  {
+  "type": "textarea",
+  "id": "offer_heading",
+  "label": "Offer Heading",
+  "default":"Start Band!"
+  },
+  {
+  "type": "color",
+  "id": "offer_heading_color",
+  "label": "Heading Color",
+  "default": "#fff"
+  },
+  {
+  "type": "range",
+  "id": "offer_heading_padding_top",
+  "label": "Heading Padding Top",
+  "unit": "px",
+  "min": 0,
+  "max": 50,
+  "default": 0,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "offer_heading_padding_bottom",
+  "label": "Heading Padding Bottom",
+  "unit": "px",
+  "min": 0,
+  "max": 50,
+  "default": 0,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "offer_heading_padding_right",
+  "label": "Heading Padding Right",
+  "unit": "px",
+  "min": 0,
+  "max": 50,
+  "default": 0,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "offer_heading_padding_left",
+  "label": "Heading Padding Left",
+  "unit": "px",
+  "min": 0,
+  "max": 50,
+  "default": 0,
+  "step": 1
+  },
+  {
+    "type": "range",
+    "id": "offer_heading_font_size",
+    "label": "Heading Font Size",
+    "unit": "px",
+    "min": 0,
+    "max": 80,
+    "default": 15,
+    "step": 1
+  },
+  {
+    "type": "range",
+    "id": "offer_heading_margin_top",
+    "label": "Heading Margin Top",
+    "unit": "px",
+    "min": 0,
+    "max": 40,
+    "default": 20,
+    "step": 1
+  },
+  {
+    "type": "range",
+    "id": "offer_heading_margin_bottom",
+    "label": "Heading Margin Bottom",
+    "unit": "px",
+    "min": 0,
+    "max": 40,
+    "default": 20,
+    "step": 1
+  },
+  {
+    "type": "range",
+    "id": "offer_heading_margin_right",
+    "label": "Heading Margin Right",
+    "unit": "px",
+    "min": 0,
+    "max": 30,
+    "default": 0,
+    "step": 1
+  },
+  {
+    "type": "range",
+    "id": "offer_heading_margin_left",
+    "label": "Heading Margin Left",
+    "unit": "px",
+    "min": 0,
+    "max": 30,
+    "default": 0,
+    "step": 1
+  },
+  {
+  "type": "textarea",
+  "id": "offer_content",
+  "label": "Content",
+  "default": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus enim magnam dolorum officiis sed voluptate explicabo inventore sequi optio molestiae nemo voluptatum quo eius quis saepe qui, id non laborum?"
+  },  
+  {
+  "type": "url",
+  "id": "offer_button_link_url",
+  "label": "Button Link URL"
+  },
+  {
+  "type": "text",
+  "id": "offer_button",
+  "label": "Offer Button",
+  "default": "Buy Now"
+  },
+  {
+  "type": "color",
+  "id": "offer_button_background_color",
+  "label": "Button Background Color",
+  "default": "#ff523b"
+  },
+   {
+  "type": "color",
+  "id": "offer_button_hover_background_color",
+  "label": "Button Hover Background Color",
+  "default": "#563434"
+  },
+  {
+  "type": "color",
+  "id": "offer_button_color",
+  "label": "Button Color",
+  "default": "#fff"
+  },
+  {
+  "type": "color",
+  "id": "offer_button_hover_color",
+  "label": "Button Hover Color",
+  "default": "#fff"
+  },
+  {
+  "type": "range",
+  "id": "offer_button_padding_top",
+  "label": "Button Padding Top",
+  "unit": "px",
+  "min": 0,
+  "max": 50,
+  "default": 8,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "offer_button_padding_bottom",
+  "label": "Button Padding Bottom",
+  "unit": "px",
+  "min": 0,
+  "max": 50,
+  "default": 8,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "offer_button_padding_right",
+  "label": "Button Padding Right",
+  "unit": "px",
+  "min": 0,
+  "max": 50,
+  "default": 22,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "offer_button_padding_left",
+  "label": "Button Padding Left",
+  "unit": "px",
+  "min": 0,
+  "max": 50,
+  "default": 22,
+  "step": 1
+  },
+  {
+  "type": "select",
+  "id": "offer_button_display",
+  "label": "Button Display",
+  "default": "inline-block",
+  "options": [
+    { "value": "block", "label": "Block" },
+    { "value": "inline-block", "label": "Inline Block" },
+    { "value": "flex", "label": "Flex" },
+    { "value": "inherit", "label": "Inherit" },
+    { "value": "inline-flex", "label": "Inline Flex" },
+    { "value": "grid", "label": "Grid" }
+  ]
+  },
+  {
+  "type": "range",
+  "id": "offer_button_border_radius",
+  "label": "Button Border Radius",
+  "unit": "px",
+  "min": 0,
+  "max": 50,
+  "default": 30,
+  "step": 1
+  },  
+  {
+  "type": "range",
+  "id": "offer_button_font_size",
+  "label": "Button Text Font Size",
+  "unit": "px",
+  "min": 0,
+  "max": 50,
+  "default": 16,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "offer_button_margin_top",
+  "label": "Button Margin Top",
+  "unit": "px",
+  "min": 0,
+  "max": 50,
+  "default": 15,
+  "step": 1
+   },
+   {
+  "type": "range",
+  "id": "offer_button_margin_bottom",
+  "label": "Button Margin Bottom",
+  "unit": "px",
+  "min": 0,
+  "max": 50,
+  "default": 15,
+  "step": 1
+   },
+   {
+  "type": "range",
+  "id": "offer_button_margin_right",
+  "label": "Button Margin Right",
+  "unit": "px",
+  "min": 0,
+  "max": 50,
+  "default": 0,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "offer_button_margin_left",
+  "label": "Button Margin Left",
+  "unit": "px",
+  "min": 0,
+  "max": 50,
+  "default": 0,
+  "step": 1
+  }
+  ],
+  "presets": [
+  {
+  "name": "Custom Offer Section",
+  "category": "Custom"
+  }
+ ]
+}
+
+{% endschema %}

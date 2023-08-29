@@ -1,0 +1,138 @@
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "c5c32292-1eb6-40bd-8b97-13f9a16b96d4": {
+      "type": "Custom-Top-Bar",
+      "blocks": {
+        "2128b3d1-63cc-4958-b06b-4acd21900204": {
+          "type": "top-bar",
+          "settings": {
+            "top_bar_slider_heading": "✍️ YOUR PERSONALIZED MASTERPIECE",
+            "top_bar_slider_text": "Every sign crafted with unique artistry"
+          }
+        },
+        "08479fd8-eb26-4cf6-b90b-8326087676de": {
+          "type": "top-bar",
+          "settings": {
+            "top_bar_slider_heading": "🌴 FLORIDA'S FINEST CRAFTMANSHIP",
+            "top_bar_slider_text": "Museum quality, never outsourced"
+          }
+        },
+        "02ea65b5-c96b-4b0c-8eb7-382f6ff00cea": {
+          "type": "top-bar",
+          "settings": {
+            "top_bar_slider_heading": "🎨 FREE ARTIST-ASSISTED EDITS",
+            "top_bar_slider_text": "Customize until it's uniquely yours"
+          }
+        },
+        "b319ddbe-1902-4371-96d6-56e4881c8e5e": {
+          "type": "top-bar",
+          "settings": {
+            "top_bar_slider_heading": "🇺🇸 FAST U.S MADE & SHIPPED",
+            "top_bar_slider_text": "Top-tier quality, no overseas shortcuts"
+          }
+        },
+        "f85bd388-48f3-4a1b-bc45-154e1c70543a": {
+          "type": "top-bar",
+          "settings": {
+            "top_bar_slider_heading": "Over 19,000 5 STAR REVIEWS",
+            "top_bar_slider_text": "Midwest-approved: For lovers of classic American heritage"
+          }
+        }
+      },
+      "block_order": [
+        "2128b3d1-63cc-4958-b06b-4acd21900204",
+        "08479fd8-eb26-4cf6-b90b-8326087676de",
+        "02ea65b5-c96b-4b0c-8eb7-382f6ff00cea",
+        "b319ddbe-1902-4371-96d6-56e4881c8e5e",
+        "f85bd388-48f3-4a1b-bc45-154e1c70543a"
+      ],
+      "settings": {
+        "top_bar_bgcolor": "#f8f9fd",
+        "top_bar_section_padding_top": 20,
+        "top_bar_section_padding_bottom": 20,
+        "top_bar_slider_heading": "#4d537a"
+      }
+    },
+    "8365d9f2-7b49-4a87-b977-626205f4aee4": {
+      "type": "NX-Announcement-Bar",
+      "blocks": {
+        "sections--19893130559805__8365d9f2-7b49-4a87-b977-626205f4aee4-announcement-1": {
+          "type": "announcement",
+          "settings": {
+            "text": "Welcome to our store",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "sections--19893130559805__8365d9f2-7b49-4a87-b977-626205f4aee4-announcement-1"
+      ],
+      "settings": {
+        "nx_nav_bar_background_color": "#000000",
+        "nx_nav_bar_text_color": "#ffffff",
+        "nx_nav_bar_text_font_size": 12,
+        "nx_nav_bar_text_font_weight": 600,
+        "nx_nav_bar_text_padding_top": 7,
+        "nx_nav_bar_text_padding_bottom": 7
+      }
+    },
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement-bar-0": {
+          "type": "announcement",
+          "settings": {
+            "text": "Welcome to our store",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "announcement-bar-0"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "background-1",
+        "show_line_separator": true,
+        "auto_rotate": false,
+        "change_slides_speed": 5
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "logo_position": "middle-center",
+        "menu": "main-menu",
+        "menu_type_desktop": "dropdown",
+        "sticky_header_type": "on-scroll-up",
+        "show_line_separator": false,
+        "color_scheme": "background-1",
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "mobile_logo_position": "center",
+        "margin_bottom": 0,
+        "padding_top": 4,
+        "padding_bottom": 20
+      }
+    },
+    "d2c870f8-7ce5-41b6-9048-078e11413ed1": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "settings": {
+        "custom_liquid": "",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "c5c32292-1eb6-40bd-8b97-13f9a16b96d4",
+    "8365d9f2-7b49-4a87-b977-626205f4aee4",
+    "announcement-bar",
+    "header",
+    "d2c870f8-7ce5-41b6-9048-078e11413ed1"
+  ]
+}

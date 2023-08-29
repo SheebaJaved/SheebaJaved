@@ -1,0 +1,131 @@
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+<style>
+  .swiper-container {
+    max-width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .swiper-slide img {
+    width: 100%;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 20px;
+    color: #000;
+  }
+
+  .swiper-button-prev {
+    left: 10px;
+  }
+
+  .swiper-button-next {
+    right: 10px;
+  }
+
+  @media (max-width: 767px) {
+    .swiper-slide .desktop-image {
+      display: none;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .swiper-slide .mobile-image {
+      display: none;
+    }
+  }
+</style>
+
+<div class="swiper-container">
+  <div class="swiper-wrapper">
+    {% for block in section.blocks %}
+    <div class="swiper-slide">
+      <a href="{{ section.settings.link_url }}">
+          <img src="{{ block.settings.image_banner | img_url: 'master' }}" alt="Desktop Image" class="desktop-image">
+        <img src="{{ block.settings.image_banner_mobile | img_url: 'master' }}" alt="Mobile Image" class="mobile-image">
+      </a>
+    </div>
+       {% endfor %}
+  </div>
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+</div>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+
+  document.addEventListener("DOMContentLoaded", function () {
+    var swiper = new Swiper(".swiper-container", {
+      loop: true,
+      autoplay: {
+        delay: 3000,
+      },
+      effect: "fade",
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  });
+  
+  // document.addEventListener("DOMContentLoaded", function () {
+  //   var swiper = new Swiper(".swiper-container", {
+  //     loop: true,
+  //     autoplay: {
+  //       delay: 4000, // Set delay in milliseconds (5 seconds)
+  //     },
+  //     navigation: {
+  //       nextEl: ".swiper-button-next",
+  //       prevEl: ".swiper-button-prev",
+  //     },
+  //   });
+  // });
+</script>
+{% schema %}
+{
+  "blocks": [
+  {
+  "type": "image-slider",
+  "name": "Image Slider",
+  "limit": 12,
+  "settings": [
+     {
+      "type": "url",
+      "id": "link_url",
+      "label": "Link URL Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_banner",
+      "label": "Desktop Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_banner_mobile",
+      "label": "Mobile Image"
+    }
+   ]
+   }
+  ],
+  "presets": [
+    {
+      "name": "Custom Image Slider",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

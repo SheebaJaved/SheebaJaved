@@ -1,0 +1,196 @@
+<style>
+  .nx-container-desc-icon{
+    background: {{ section.settings.nx_bgcolor }};
+    padding:20px 0 50px 0;
+    text-align:center;
+  }
+  
+  .nx-container-desc-icon h2{
+    font-weight: {{ section.settings.nx_header_font_weight }};
+  	font-size: 42px;
+    margin-bottom: 60px;
+  }
+  
+  .nx-wrap-desc-icon{
+  	display:flex;
+    max-width:1140px;
+    margin: 0 auto;
+    
+  }
+  .nx-desc-widget{
+  	text-align: center;
+    width: {{ 100 | divided_by: section.blocks.size}}%;
+    padding: 0 10px;
+  }
+  .nx-desc-widget h4{
+    margin: 0 0 10px 0;
+  }
+  .nx-desc-widget p{
+  	font-size: 16px;
+    margin:0;
+  }
+  
+  @media screen and (max-width:1024px){
+  	.nx-wrap-desc-icon{
+      flex-flow: wrap;
+    }
+    
+    .nx-desc-widget{
+    	width:50%;
+      	margin: 20px 0;
+    }
+    
+    {% assign i = section.blocks.size | modulo:2 %}
+    {% if i != 0 %}
+    .nx-desc-widget:last-child{
+    	width:100%
+    }
+    {% endif %}
+  }
+  
+  @media screen and (max-width:767px){
+    .nx-wrap-desc-icon{
+      flex-flow: column;
+    }
+    .nx-desc-widget:first-child{
+    	margin:0 0 20px 0;
+    }
+    .nx-desc-widget{
+    	width:100%;
+      	margin: 20px 0;
+    }
+  }
+</style>
+<div class="nx-container-desc-icon">
+  <h2 style="nx-color: {{ section.settings.nx_headercolor }}; font-size: {{ section.settings.nx_headingsize }}px;">{{ section.settings.nx_header }}</h2>
+<div class="nx-wrap-desc-icon">
+  
+  {%- for block in section.blocks -%}
+  <style>
+    .nx-par-{{ block.id }} p{
+      font-size: {{ block.settings.nx_descriptionsize }}px;
+    }
+  </style>
+  <div class="nx-desc-widget nx-par-{{ block.id }}">
+  	<img src="{{ block.settings.nx_icon | img_url: 'large' }}" style="width:50px; height:50px;">
+    <h4 style="color: {{ block.settings.nx_headercolor }}; font-size: {{ block.settings.nx_headingsizecol }}px; font-weight: {{ block.settings.nx_headingsizecol_font_weight }};">{{ block.settings.nx_header }}</h4>
+    <div style="color: {{ block.settings.nx_descriptioncolor }}">  {{block.settings.nx_description }}</div>
+  </div>
+  {%- endfor -%}
+</div>
+</div>
+{% schema %}
+  {
+    "name": "NX Columns With Icons",
+    "settings": [
+	{
+    "type": "color",
+    "id": "nx_bgcolor",
+    "label": "Background color"
+    },
+	{
+    "type": "text",
+    "id": "nx_header",
+    "label": "Header"
+    },
+	{
+    "type": "color",
+    "id": "nx_headercolor",
+    "label": "Header color"
+    },
+	{
+    "type": "range",
+    "id": "nx_headingsize",
+    "min": 10,
+    "max": 100,
+    "step": 1,
+    "unit": "px",
+    "label": "Heading Font Size",
+    "default": 25
+    },
+    {
+    "type": "range",
+    "id": "nx_header_font_weight",
+    "label": "Heading Font Weight",
+    "unit": "nrm",
+    "min": 100,
+    "max": 900,
+    "default": 500,
+    "step": 100
+    }
+
+    ],
+	"blocks":[
+	{
+    "type": "col",
+    "name": "Column",
+    "limit":5,
+    "settings": [
+      {
+      "type": "image_picker",
+      "id": "nx_icon",
+      "label": "Icon(upload file .png)"
+      },
+      {
+      "type": "text",
+      "id": "nx_header",
+      "default": "Header name",
+      "label": "Header"
+      },
+      {
+      "type": "color",
+      "id": "nx_headercolor",
+      "label": "Header color"
+      },
+      {
+      "type": "range",
+      "id": "nx_headingsizecol",
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Heading Font Size",
+      "default": 25
+      },
+      {
+      "type": "range",
+      "id": "nx_headingsizecol_font_weight",
+      "label": "Heading Font Weight",
+      "unit": "nrm",
+      "min": 100,
+      "max": 900,
+      "default": 500,
+      "step": 100
+      },  
+      {
+      "type": "richtext",
+      "id": "nx_description",
+      "default": "<p>Text here</p>",
+      "label": "Description"
+      },
+      {
+      "type": "color",
+      "id": "nx_descriptioncolor",
+      "label": "Text color"
+      },
+      {
+      "type": "range",
+      "id": "nx_descriptionsize",
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Description Font Size",
+      "default": 16
+      }
+	]
+  }
+],
+
+"presets": [
+    {
+      "name": "NX Columns With Icons"
+    }
+  ]
+  }
+{% endschema %}

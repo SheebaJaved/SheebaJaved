@@ -1,0 +1,257 @@
+<style>
+  body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+  }
+ .img-section{
+      background:{{ section.settings.img-section-background_color }};
+      padding-top:{{ section.settings.img-section_padding_top }}px;
+      padding-bottom:{{ section.settings.img-section_padding_bottom }}px;
+      padding-right:{{ section.settings.img-section_padding_right }}px;
+      padding-left:{{ section.settings.img-section_padding_left }}px;
+  }
+  .img-section .heading{
+      padding-top: {{ section.settings.heading_padding_top }}px;
+      padding-bottom: {{ section.settings.heading_padding_bottom }}px;
+      color:{{ section.settings.heading_color }};
+      text-align: center;
+      font-size:  {{ section.settings.heading_font_size }}px;
+  }
+  .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-gap: 10px;
+      padding-top: {{ section.settings.img-box_padding_top }}px;
+      padding-bottom: {{ section.settings.img-box_padding_bottom }}px;
+      padding-right:{{ section.settings.img-box_padding_right }}px;
+      padding-left:{{ section.settings.img-box_padding_left }}px;
+      border: 1px solid #ccc;
+      max-width: auto;
+      margin: 0 auto;
+  }
+  .image {
+      border: 1px solid #ccc;
+      padding-top: {{ section.settings.img_padding_top }}px;
+      padding-bottom: {{ section.settings.img_padding_bottom }}px;
+      padding-right:{{ section.settings.img_padding_right }}px;
+      padding-left:{{ section.settings.img_padding_left }}px;
+      text-align: center;
+  }
+  .image img {
+      max-width: 100%;
+      height: auto;
+  }
+</style>
+<div class="img-section">
+<h1 class="heading">{{ section.settings.img_heading }}</h1>
+<div class="image-grid image-box">
+ {% for block in section.blocks %}
+  <a href="{{ block.settings.img-link_url }}" class="image">
+    <img src="{{ block.settings.section-image | img_url: 'master' }}" alt="Image 1">
+  </a>
+ {% endfor %}
+</div>
+</div>
+
+{% schema %}
+  {
+  "name": "Custom Image Section",
+  "settings": [
+  {
+  "type": "color",
+  "id": "img-section-background_color",
+  "label": "Background Color",
+  "default": "#fff"
+  },
+  {
+  "type": "range",
+  "id": "img-section_padding_top",
+  "label": "Img Section Padding Top",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 15,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "img-section_padding_bottom",
+  "label": "Img Section Padding Bottom",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 15,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "img-section_padding_right",
+  "label": "Img Section Padding Right",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 15,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "img-section_padding_left",
+  "label": "Img Section Padding Left",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 15,
+  "step": 1
+  },  
+  {
+    "type": "textarea",
+    "id": "img_heading",
+    "label": "Image Heading",
+    "default":"Image Section"
+  },
+  {
+  "type": "color",
+  "id": "heading_color",
+  "label": "Heading Color",
+  "default": "#000"
+  },
+  {
+  "type": "range",
+  "id": "heading_padding_top",
+  "label": "Heading Padding Top",
+  "unit": "px",
+  "min": 0,
+  "max": 50,
+  "default": 15,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "heading_padding_bottom",
+  "label": "Heading Padding Bottom",
+  "unit": "px",
+  "min": 0,
+  "max": 50,
+  "default": 15,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "heading_font_size",
+  "label": "Heading Font Size",
+  "unit":"px",
+  "min": 20,
+  "max": 60,
+  "default": 30,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "img-box_padding_top",
+  "label": "Img Box Padding Top",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 15,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "img-box_padding_bottom",
+  "label": "Img Box Padding Bottom",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 15,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "img-box_padding_right",
+  "label": "Img Box Padding Right",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 15,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "img-box_padding_left",
+  "label": "Img Box Padding Left",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 15,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "img_padding_top",
+  "label": "Img Padding Top",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 15,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "img_padding_bottom",
+  "label": "Img Padding Bottom",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 15,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "img_padding_right",
+  "label": "Img Padding Right",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 15,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "img_padding_left",
+  "label": "Img Padding Left",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 15,
+  "step": 1
+  }
+  ],
+  "blocks": [
+  {
+  "type": "image-box",
+  "name": "Image Box",
+  "limit": 12,
+  "settings": [
+    {
+      "type": "url",
+      "id": "img-link_url",
+      "label": "Image Link URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "section-image",
+      "label": "Section Image"
+    }
+   ]
+   }
+  ],
+  "presets": [
+  {
+  "name": "Custom Image Section",
+  "category": "Custom"
+  }
+ ]
+}
+
+{% endschema %}

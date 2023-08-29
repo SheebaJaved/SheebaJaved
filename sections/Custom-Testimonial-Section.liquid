@@ -1,0 +1,530 @@
+ <!-- Font Awesome Link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.css">
+    <style>
+        .testimonial {
+            background:{{ section.settings.testimonial_section_background_color }};
+            padding-top:{{ section.settings.testimonial_section_padding_top }}px;
+            padding-bottom:{{ section.settings.testimonial_section_padding_bottom }}px;
+            padding-right:{{ section.settings.testimonial_section_padding_right }}px;
+            padding-left:{{ section.settings.testimonial_section_padding_left }}px;
+        }
+        .testimonial .heading{
+            padding-top: {{ section.settings.testimonial_main_heading_padding_top }}px;
+            padding-bottom: {{ section.settings.testimonial_main_heading_padding_bottom }}px;
+            color:{{ section.settings.testimonial_main_heading_color }};
+            text-align: {{ section.settings.testimonial_main_heading_text_align }};
+            font-size: {{ section.settings.testimonial_main_heading_font_size }}px;
+            font-weight: {{ section.settings.testimonial_main_heading_font_weight }};
+        }
+        .testimonial_small-container {
+            max-width: {{ section.settings.testimonial_container_max_width }};
+            padding-top:{{ section.settings.testimonial_container_padding_top }}px;
+            padding-bottom:{{ section.settings.testimonial_container_padding_bottom }}px;
+            padding-right:{{ section.settings.testimonial_container_padding_right }}px;
+            padding-left:{{ section.settings.testimonial_container_padding_left }}px;
+            margin: auto;
+            display: {{ section.settings.testimonial_container_display }};
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: 30px;
+        }
+        .col-3 {
+            text-align: {{ section.settings.testimonial_box_text_align }};
+            padding-top: {{ section.settings.testimonial_box_padding_top }}px;
+            padding-bottom: {{ section.settings.testimonial_box_padding_bottom }}px;
+            padding-right:{{ section.settings.testimonial_box_padding_right }}px;
+            padding-left:{{ section.settings.testimonial_box_padding_left }}px;
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.5s;
+        }
+        .testimonial .col-3:hover {
+            transform: translateY(-10px);
+        }
+        .testimonial .col-3 img {
+            width: {{ section.settings.testimonial_img_width }}px;
+            margin-top: {{ section.settings.testimonial_img_margin_top }}px;
+            margin-bottom: {{ section.settings.testimonial_img_margin_bottom }}px;
+            margin-right: {{ section.settings.testimonial_img_margin_right }}px;
+            margin-left: {{ section.settings.testimonial_img_margin_left }}px;
+            border-radius:  {{ section.settings.testimonial_img_border_radius }}%;
+        }
+        .fa.fa-quote-left {
+            font-size: {{ section.settings.testimonial_main_icon_font_size }}px;
+            color: {{ section.settings.testimonial_main_icon_color }};
+        }
+        .col-3 p {
+            margin-top: {{ section.settings.testimonial_text_margin_top }}px;
+            margin-bottom: {{ section.settings.testimonial_text_margin_bottom }}px;
+            margin-right: {{ section.settings.testimonial_text_margin_right }}px;
+            margin-left: {{ section.settings.testimonial_text_margin_left }}px;
+            font-size: {{ section.settings.testimonial_text_font_size }}px;
+            color: {{ section.settings.testimonial_text_color }};
+        }
+       .rating{
+         display:block;
+       }
+       .rating .fa{
+          color: {{ section.settings.testimonial_icon_color }};
+        }
+        .testimonial .col-3 h3 {
+            font-size:  {{ section.settings.testimonial_heading_font_size }}px;
+            font-weight: {{ section.settings.testimonial_heading_font_weight }};
+            color: {{ section.settings.testimonial_heading_color }};
+        }
+    </style>
+      <div class="testimonial">
+      <h1 class="heading">{{ section.settings.testimonial_main_heading }}</h1>
+        <div class="testimonial_small-container">
+           {% for block in section.blocks %}
+            <div class="col-3">
+                <i class="fa fa-quote-left"></i>
+                <p>{{ block.settings.testimonial_text }}</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <img src="{{ block.settings.testimonial-image | img_url: 'master' }}">
+                <h3>{{ block.settings.testimonial_heading }}</h3>
+            </div>
+           {% endfor %}
+        </div>
+    </div>
+
+    {% schema %}
+  {
+  "name": "Testimonial Section",
+  "settings": [
+  {
+  "type": "color",
+  "id": "testimonial_section_background_color",
+  "label": "Background Color",
+  "default": "#fff"
+  },
+  {
+  "type": "range",
+  "id": "testimonial_section_padding_top",
+  "label": "Section Padding Top",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 50,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "testimonial_section_padding_bottom",
+  "label": "Section Padding Bottom",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 5,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "testimonial_section_padding_right",
+  "label": "Section Padding Right",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 5,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "testimonial_section_padding_left",
+  "label": "Section Padding Left",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 5,
+  "step": 1
+ },
+ {
+  "type": "textarea",
+  "id": "testimonial_main_heading",
+  "label": "Main Heading",
+  "default":"Testimonial"
+  },
+  {
+  "type": "color",
+  "id": "testimonial_main_heading_color",
+  "label": "Heading Color",
+  "default": "#000"
+  },
+  {
+  "type": "range",
+  "id": "testimonial_main_heading_padding_top",
+  "label": "Heading Padding Top",
+  "unit": "px",
+  "min": 0,
+  "max": 50,
+  "default": 15,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "testimonial_main_heading_padding_bottom",
+  "label": "Heading Padding Bottom",
+  "unit": "px",
+  "min": 0,
+  "max": 50,
+  "default": 15,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "testimonial_main_heading_font_size",
+  "label": "Heading Font Size",
+  "unit":"px",
+  "min": 20,
+  "max": 60,
+  "default": 30,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "testimonial_main_heading_font_weight",
+  "label": "Heading Font Weight",
+  "unit": "nrm",
+  "min": 100,
+  "max": 900,
+  "default": 600,
+  "step": 100
+  },
+  {
+  "type": "select",
+  "id": "testimonial_main_heading_text_align",
+  "label": "Heading Text Alignment",
+  "default": "center",
+  "options": [
+    { "value": "left", "label": "Left" },
+    { "value": "center", "label": "Center" },
+    { "value": "right", "label": "Right" },
+    { "value": "justify", "label": "Justify" }
+  ]
+  },  
+  {
+  "type": "range",
+  "id": "testimonial_container_padding_top",
+  "label": "Container Padding Top",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 0,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "testimonial_container_padding_bottom",
+  "label": "Container Padding Bottom",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 0,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "testimonial_container_padding_right",
+  "label": "Container Padding Right",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 25,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "testimonial_container_padding_left",
+  "label": "Container Padding Left",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 25,
+  "step": 1
+ },
+ {
+  "type": "select",
+  "id": "testimonial_container_max_width",
+  "label": "Max Width",
+  "default": "1080px",
+  "options": [
+    { "value": "100px", "label": "100px" },
+    { "value": "500px", "label": "500px" },
+    { "value": "800px", "label": "800px" },
+    { "value": "1080px", "label": "1080px" },
+    { "value": "1200px", "label": "1200px" },
+    { "value": "1600px", "label": "1600px" },
+    { "value": "1800px", "label": "1800px" }
+  ]
+ },  
+ {
+  "type": "select",
+  "id": "testimonial_container_display",
+  "label": "Display",
+  "default": "grid",
+  "options": [
+    { "value": "block", "label": "Block" },
+    { "value": "inline-block", "label": "Inline Block" },
+    { "value": "flex", "label": "Flex" },
+    { "value": "inherit", "label": "Inherit" },
+    { "value": "inline-flex", "label": "Inline Flex" },
+    { "value": "grid", "label": "Grid" }
+  ]
+ },
+ {
+  "type": "select",
+  "id": "testimonial_box_text_align",
+  "label": " Box Text Alignment",
+  "default": "center",
+  "options": [
+    { "value": "left", "label": "Left" },
+    { "value": "center", "label": "Center" },
+    { "value": "right", "label": "Right" },
+    { "value": "justify", "label": "Justify" }
+  ]
+ },   
+ {
+  "type": "range",
+  "id": "testimonial_box_padding_top",
+  "label": "Box Padding Top",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 40,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "testimonial_box_padding_bottom",
+  "label": "Box Padding Bottom",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 40,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "testimonial_box_padding_right",
+  "label": "Box Padding Right",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 20,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "testimonial_box_padding_left",
+  "label": "Box Padding Left",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 20,
+  "step": 1
+  },
+  {
+  "type": "color",
+  "id": "testimonial_main_icon_color",
+  "label": "Main Icon Color",
+  "default": "#ff523b"
+  },
+  {
+  "type": "range",
+  "id": "testimonial_main_icon_font_size",
+  "label": "Icon Font Size",
+  "unit":"px",
+  "min": 0,
+  "max": 60,
+  "default": 34,
+  "step": 1
+  },
+  {
+  "type": "color",
+  "id": "testimonial_text_color",
+  "label": "Text Color",
+  "default": "#777"
+  },
+  {
+    "type": "range",
+    "id": "testimonial_text_margin_top",
+    "label": "Text Margin Top",
+    "unit": "px",
+    "min": 0,
+    "max": 30,
+    "default": 12,
+    "step": 1
+  },
+  {
+    "type": "range",
+    "id": "testimonial_text_margin_bottom",
+    "label": "Text Margin Bottom",
+    "unit": "px",
+    "min": 0,
+    "max": 30,
+    "default": 12,
+    "step": 1
+  },
+  {
+    "type": "range",
+    "id": "testimonial_text_margin_left",
+    "label": "Text Margin Left",
+    "unit": "px",
+    "min": 0,
+    "max": 30,
+    "default": 0,
+    "step": 1
+  },
+  {
+  "type": "range",
+  "id": "testimonial_text_margin_right",
+  "label": "Text Margin Right",
+  "unit": "px",
+  "min": 0,
+  "max": 30,
+  "default": 0,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "testimonial_text_font_size",
+  "label": "Text Font Size",
+  "unit": "px",
+  "min": 0,
+  "max": 60,
+  "default": 12,
+  "step": 1
+  },
+  {
+  "type": "color",
+  "id": "testimonial_icon_color",
+  "label": "Icon Color",
+  "default": "#ff523b"
+  },
+  {
+  "type": "range",
+  "id": "testimonial_img_width",
+  "label": "Image Width",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 50,
+  "step": 1
+  },  
+  {
+  "type": "range",
+  "id": "testimonial_margin_top",
+  "label": "Image Margin Top",
+  "unit": "px",
+  "min": 0,
+  "max": 20,
+  "default": 20,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "testimonial_margin_bottom",
+  "label": "Image Margin Bottom",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 0,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "testimonial_margin_left",
+  "label": "Image Margin Left",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 0,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "testimonial_margin_right",
+  "label": "Image Margin Right",
+  "unit": "px",
+  "min": 0,
+  "max": 100,
+  "default": 0,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "testimonial_img_border_radius",
+  "label": "Testimonial Img Border Radius",
+  "unit": "%",
+  "min": 0,
+  "max": 100,
+  "default": 50,
+  "step": 1
+  },
+  {
+  "type": "color",
+  "id": "testimonial_heading_color",
+  "label": "Name Color",
+  "default": "#555"
+  },  
+  {
+  "type": "range",
+  "id": "testimonial_heading_font_size",
+  "label": "Name Font Size",
+  "unit": "px",
+  "min": 0,
+  "max": 60,
+  "default": 16,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "testimonial_heading_font_weight",
+  "label": "Name Font Weight",
+  "unit": "nrm",
+  "min": 100,
+  "max": 900,
+  "default": 600,
+  "step": 100
+  }  
+  ],
+  "blocks": [
+  {
+  "type": "image-box",
+  "name": "Image Box",
+  "limit": 12,
+  "settings": [
+  {
+    "type": "textarea",
+    "id": "testimonial_text",
+    "label": "Testimonial Text",
+    "default":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam blanditiis, voluptatem tempora eum nemo natus laboriosam debitis doloremque explicabo ullam."
+  },
+  {
+    "type": "image_picker",
+    "id": "testimonial-image",
+    "label": "Section Image"
+  },
+  {
+    "type": "textarea",
+    "id": "testimonial_heading",
+    "label": "Name",
+    "default":"Jane Smith"
+  }
+   ]
+   }
+  ],
+  "presets": [
+  {
+  "name": "Testimonial Section",
+  "category": "Custom"
+  }
+ ]
+}
+
+{% endschema %}

@@ -1,0 +1,455 @@
+ <!-- Font Awesome Link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.css">
+    <style>
+        .testimonial-slider {
+            background:{{ section.settings.testimonial_slider_section_background_color }};
+            padding-top:{{ section.settings.testimonial_slider_section_padding_top }}px;
+            padding-bottom:{{ section.settings.testimonial_slider_section_padding_bottom }}px;
+            padding-right:{{ section.settings.testimonial_slider_section_padding_right }}px;
+            padding-left:{{ section.settings.testimonial_slider_section_padding_left }}px;
+        }
+        .testimonial-slider .heading{
+            padding-top: {{ section.settings.testimonial_slider_main_heading_padding_top }}px;
+            padding-bottom: {{ section.settings.testimonial_slider_main_heading_padding_bottom }}px;
+            color:{{ section.settings.testimonial_slider_main_heading_color }};
+            text-align: center;
+            font-size:  {{ section.settings.testimonial_slider_main_heading_font_size }}px;
+        }
+        .testimonial-slider .small-container {
+            {% comment %} max-width: 1080px; {% endcomment %}
+            padding-top:{{ section.settings.testimonial_slider_container_padding_top }}px;
+            padding-bottom:{{ section.settings.testimonial_slider_container_padding_bottom }}px;
+            padding-right:{{ section.settings.testimonial_slider_container_padding_right }}px;
+            padding-left:{{ section.settings.testimonial_slider_container_padding_left }}px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: 30px;
+        }
+        .col-3-box {
+            text-align: center;
+            padding-top: {{ section.settings.testimonial_slider_box_padding_top }}px;
+            padding-bottom: {{ section.settings.testimonial_slider_box_padding_bottom }}px;
+            padding-right:{{ section.settings.testimonial_slider_box_padding_right }}px;
+            padding-left:{{ section.settings.testimonial_slider_box_padding_left }}px;
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.5s;
+        }
+        .testimonial .col-3-box:hover {
+            transform: translateY(-10px);
+        }
+        .testimonial-slider .col-3-box img {
+            width: 50px;
+            margin-top: {{ section.settings.testimonial_slider_margin_top }}px;
+            margin-bottom: {{ section.settings.testimonial_slider_margin_bottom }}px;
+            margin-right: {{ section.settings.testimonial_slider_margin_right }}px;
+            margin-left: {{ section.settings.testimonial_slider_margin_left }}px;
+            border-radius: 50%;
+        }
+        .fa.fa-quote-left {
+            font-size: 34px;
+            color: #ff523b;
+        }
+        .col-3 p {
+            margin-top: {{ section.settings.testimonial_slider_text_margin_top }}px;
+            margin-bottom: {{ section.settings.testimonial_slider_text_margin_bottom }}px;
+            margin-right: {{ section.settings.testimonial_slider_text_margin_right }}px;
+            margin-left: {{ section.settings.testimonial_slider_text_margin_left }}px;
+            font-size: 12px;
+            color: #777;
+        }
+       .rating .fa{
+          color: {{ section.settings.testimonial_slider_icon_color }};
+        }
+        .testimonial-slider .col-3-box h3 {
+            font-size:  {{ section.testimonial_heading_slider_font_size }}px;
+            font-weight: 600;
+            color: {{ section.settings.testimonial_slider_heading_color }};
+        }
+      
+        .testimonial-slider-button-prev,
+        .testimonial-slider-button-next {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 30px;
+          height: 30px;
+          background-color: #fff;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+          z-index: 10;
+          font-size: 20px;
+          color: #000;
+        }
+
+        .testimonial-slider-button-prev {
+          left: 10px;
+        }
+      
+        .testimonial-slider-button-next {
+          right: 10px;
+        }
+    </style>
+
+    <div class="testimonial-slider">
+        <h1 class="heading">{{ section.settings.testimonial_main_heading }}</h1>
+        <div class="slider">
+          <div class="slider-container">
+           <div class="small-container">
+             {% for block in section.blocks %}
+                    <div class="col-3-box">
+                        <i class="fa fa-quote-left"></i>
+                        <p>{{ block.settings.testimonial_slider_text }}</p>
+                        <div class="rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-o"></i>
+                        </div>
+                        <img src="{{ block.settings.testimonial_slider_image | img_url: 'master' }}">
+                        <h3>{{ block.settings.testimonial_slider_heading }}</h3>
+                    </div>
+                {% endfor %}
+            </div>
+          </div>
+           <div class="testimonial-slider-button-prev"></div>
+          <div class="testimonial-slider-button-next"></div>
+        </div>
+          
+    </div>
+
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+
+
+ document.addEventListener("DOMContentLoaded", function () {
+  var swiper = new Swiper(".slider", {
+     loop: true,
+     autoplay: {
+      delay: 3000, // Set delay in milliseconds (5 seconds)
+   },
+   navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+     },
+   });
+ });
+</script>
+
+
+    {% schema %}
+  {
+  "name": "Testimonial Slider",
+  "settings": [
+  {
+    "type": "color",
+    "id": "testimonial_slider_section_background_color",
+    "label": "Background Color",
+    "default": "#fff"
+  },
+  {
+    "type": "range",
+    "id": "testimonial_slider_section_padding_top",
+    "label": "Section Padding Top",
+    "unit": "px",
+    "min": 0,
+    "max": 100,
+    "default": 50,
+    "step": 1
+  },
+  {
+    "type": "range",
+    "id": "testimonial_slider_section_padding_bottom",
+    "label": "Section Padding Bottom",
+    "unit": "px",
+    "min": 0,
+    "max": 100,
+    "default": 5,
+    "step": 1
+  },
+  {
+    "type": "range",
+    "id": "testimonial_slider_section_padding_right",
+    "label": "Section Padding Right",
+    "unit": "px",
+    "min": 0,
+    "max": 100,
+    "default": 5,
+    "step": 1
+  },
+  {
+    "type": "range",
+    "id": "testimonial_slider_section_padding_left",
+    "label": "Section Padding Left",
+    "unit": "px",
+    "min": 0,
+    "max": 100,
+    "default": 5,
+    "step": 1
+  },
+   {
+    "type": "textarea",
+    "id": "testimonial_slider_main_heading",
+    "label": "Main Heading",
+    "default":"Testimonial Slider"
+  },
+  {
+    "type": "color",
+    "id": "testimonial_slider_main_heading_color",
+    "label": "Heading Color",
+    "default": "#000"
+  },
+  {
+    "type": "range",
+    "id": "testimonial_slider_main_heading_padding_top",
+    "label": "Heading Padding Top",
+    "unit": "px",
+    "min": 0,
+    "max": 50,
+    "default": 15,
+    "step": 1
+  },
+  {
+  "type": "range",
+  "id": "testimonial_slider_main_heading_padding_bottom",
+  "label": "Heading Padding Bottom",
+  "unit": "px",
+  "min": 0,
+  "max": 50,
+  "default": 15,
+  "step": 1
+  },
+  {
+  "type": "range",
+  "id": "testimonial_slider_main_heading_font_size",
+  "label": "Heading Font Size",
+  "unit":"px",
+  "min": 20,
+  "max": 60,
+  "default": 30,
+  "step": 1
+  },  
+  {
+    "type": "range",
+    "id": "testimonial_slider_container_padding_top",
+    "label": "Container Padding Top",
+    "unit": "px",
+    "min": 0,
+    "max": 100,
+    "default": 0,
+    "step": 1
+  },
+  {
+    "type": "range",
+    "id": "testimonial_slider_container_padding_bottom",
+    "label": "Container Padding Bottom",
+    "unit": "px",
+    "min": 0,
+    "max": 100,
+    "default": 0,
+    "step": 1
+  },
+  {
+    "type": "range",
+    "id": "testimonial_slider_container_padding_right",
+    "label": "Container Padding Right",
+    "unit": "px",
+    "min": 0,
+    "max": 100,
+    "default": 25,
+    "step": 1
+  },
+  {
+    "type": "range",
+    "id": "testimonial_slider_container_padding_left",
+    "label": "Container Padding Left",
+    "unit": "px",
+    "min": 0,
+    "max": 100,
+    "default": 25,
+    "step": 1
+  },
+   {
+    "type": "range",
+    "id": "testimonial_slider_box_padding_top",
+    "label": "Box Padding Top",
+    "unit": "px",
+    "min": 0,
+    "max": 100,
+    "default": 40,
+    "step": 1
+  },
+  {
+    "type": "range",
+    "id": "testimonial_slider_box_padding_bottom",
+    "label": "Box Padding Bottom",
+    "unit": "px",
+    "min": 0,
+    "max": 100,
+    "default": 40,
+    "step": 1
+  },
+  {
+    "type": "range",
+    "id": "testimonial_slider_box_padding_right",
+    "label": "Box Padding Right",
+    "unit": "px",
+    "min": 0,
+    "max": 100,
+    "default": 20,
+    "step": 1
+  },
+  {
+    "type": "range",
+    "id": "testimonial_slider_box_padding_left",
+    "label": "Box Padding Left",
+    "unit": "px",
+    "min": 0,
+    "max": 100,
+    "default": 20,
+    "step": 1
+  },
+  {
+    "type": "range",
+    "id": "testimonial_slider_text_margin_top",
+    "label": "Text Margin Top",
+    "unit": "px",
+    "min": 0,
+    "max": 30,
+    "default": 12,
+    "step": 1
+  },
+  {
+    "type": "range",
+    "id": "testimonial_slider_text_margin_bottom",
+    "label": "Text Margin Bottom",
+    "unit": "px",
+    "min": 0,
+    "max": 30,
+    "default": 12,
+    "step": 1
+  },
+  {
+    "type": "range",
+    "id": "testimonial_slider_text_margin_left",
+    "label": "Text Margin Left",
+    "unit": "px",
+    "min": 0,
+    "max": 30,
+    "default": 0,
+    "step": 1
+  },
+  {
+    "type": "range",
+    "id": "testimonial_slider_text_margin_right",
+    "label": "Text Margin Right",
+    "unit": "px",
+    "min": 0,
+    "max": 30,
+    "default": 0,
+    "step": 1
+  },
+  {
+    "type": "range",
+    "id": "testimonial_slider_margin_top",
+    "label": "Image Margin Top",
+    "unit": "px",
+    "min": 0,
+    "max": 20,
+    "default": 20,
+    "step": 1
+  },
+  {
+    "type": "range",
+    "id": "testimonial_slider_margin_bottom",
+    "label": "Image Margin Bottom",
+    "unit": "px",
+    "min": 0,
+    "max": 100,
+    "default": 0,
+    "step": 1
+  },
+  {
+    "type": "range",
+    "id": "testimonial_slider_margin_left",
+    "label": "Image Margin Left",
+    "unit": "px",
+    "min": 0,
+    "max": 100,
+    "default": 0,
+    "step": 1
+  },
+  {
+    "type": "range",
+    "id": "testimonial_slider_margin_right",
+    "label": "Image Margin Right",
+    "unit": "px",
+    "min": 0,
+    "max": 100,
+    "default": 0,
+    "step": 1
+  },
+  {
+    "type": "color",
+    "id": "testimonial_slider_icon_color",
+    "label": "Icon Color",
+    "default": "#ff523b"
+  },
+  {
+    "type": "color",
+    "id": "testimonial_slider_heading_color",
+    "label": "Name Color",
+    "default": "#555"
+  },
+  {
+    "type": "range",
+    "id": "testimonial_slider_heading_font_size",
+    "label": "Name Font Size",
+    "unit":"px",
+    "min": 0,
+    "max": 60,
+    "default": 16,
+    "step": 1
+  }
+  ],
+  "blocks": [
+  {
+  "type": "image-box",
+  "name": "Image Box",
+  "limit": 12,
+  "settings": [
+  {
+    "type": "textarea",
+    "id": "testimonial_slider_text",
+    "label": "Testimonial Text",
+    "default":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam blanditiis, voluptatem tempora eum nemo natus laboriosam debitis doloremque explicabo ullam."
+  },
+  {
+    "type": "image_picker",
+    "id": "testimonial_slider_image",
+    "label": "Section Image"
+  },
+  {
+    "type": "textarea",
+    "id": "testimonial_slider_heading",
+    "label": "Name",
+    "default":"Jane Smith"
+  }
+   ]
+   }
+  ],
+  "presets": [
+  {
+  "name": "Testimonial Slider",
+  "category": "Custom"
+  }
+ ]
+}
+
+{% endschema %}
